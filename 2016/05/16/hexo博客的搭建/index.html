@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -84,9 +84,9 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo博客的搭建与遇到的问题解答">
 <meta property="og:url" content="http://yoursite.com/2016/05/16/hexo博客的搭建/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="小前端 大学问">
 <meta property="og:description" content="1、安装Git从Git官网上下载，如果电脑安装过Xcode就不用下载了，因为Xcode自带Git。 2、安装node.jshexo是一个基于bode.js的静态博客生成器，要先安装node.js才能保证hexo的正常运行。 下载地址https://nodejs.org/en/，推荐下载v4.4.4LTS稳定版。 安装之后打开终端，输入 node -v 出现node.js版本号，表示安装成功。 3、">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-06-29T16:21:50.030Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo博客的搭建与遇到的问题解答">
@@ -106,7 +106,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -126,7 +126,7 @@
 
 
 
-  <title>hexo博客的搭建与遇到的问题解答 | Hexo</title>
+  <title>hexo博客的搭建与遇到的问题解答 | 小前端 大学问</title>
   
 
 
@@ -148,7 +148,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -166,7 +166,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">小前端 大学问</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -196,7 +196,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            首页
           </a>
         </li>
       
@@ -206,7 +206,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            归档
           </a>
         </li>
       
@@ -246,13 +246,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/16/hexo博客的搭建/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="genhao">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="小前端 大学问">
     </span>
 
     
@@ -270,9 +270,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-05-16T18:54:52+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-16T18:54:52+08:00">
                 2016-05-16
               </time>
             
@@ -385,6 +385,30 @@ hexo d
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechat-reward-image.png" alt="genhao 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
@@ -405,8 +429,8 @@ hexo d
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/16/gulp构建工具/" rel="next" title="gulp 构建和工具">
-                <i class="fa fa-chevron-left"></i> gulp 构建和工具
+              <a href="/2016/05/14/思维导图/" rel="next" title="思维导图">
+                <i class="fa fa-chevron-left"></i> 思维导图
               </a>
             
           </div>
@@ -415,8 +439,8 @@ hexo d
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/16/SEO优化/" rel="prev" title="SEO优化">
-                SEO优化 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/05/16/gulp构建工具/" rel="prev" title="gulp 构建和工具">
+                gulp 构建和工具 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -471,10 +495,10 @@ hexo d
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            站点概览
           </li>
         </ul>
       
@@ -483,8 +507,12 @@ hexo d
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">John Doe</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="genhao" />
+            
+              <p class="site-author-name" itemprop="name">genhao</p>
+              <p class="site-description motion-element" itemprop="description">学海无涯</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -495,7 +523,7 @@ hexo d
                 <a href="/archives/">
               
                   <span class="site-state-item-count">65</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
@@ -508,7 +536,7 @@ hexo d
               <div class="site-state-item site-state-tags">
                 
                   <span class="site-state-item-count">50</span>
-                  <span class="site-state-item-name">tags</span>
+                  <span class="site-state-item-name">标签</span>
                 
               </div>
             
@@ -564,13 +592,13 @@ hexo d
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">genhao</span>
 
   
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
@@ -578,7 +606,7 @@ hexo d
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
