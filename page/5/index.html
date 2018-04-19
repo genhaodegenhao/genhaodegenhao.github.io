@@ -56,7 +56,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
 
 
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
@@ -1481,7 +1481,7 @@ animation();
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/27/查找次数最多的字符/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/27/首字母大写/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="genhao">
@@ -1500,7 +1500,7 @@ animation();
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/05/27/查找次数最多的字符/" itemprop="url">查找次数出现最多的字符和去重</a></h1>
+                <a class="post-title-link" href="/2016/05/27/首字母大写/" itemprop="url">首字母大写</a></h1>
         
 
         <div class="post-meta">
@@ -1552,30 +1552,18 @@ animation();
       
         
           
-            <pre><code>var str = &quot;abbcggggg&quot;;
-    var len = 0;
-    var temp = &quot;&quot;;
-    for (i = 0; i &lt; str.length; i++) {
-        var s = str.substr(i, 1);    //把字符串一个一个分割开来
-        var tt = str.split(s);        //以分割出来的单个字符作为分割点把字符串分割
-        var dd=tt.length-s.length;        //把无效的“空”的字符串长度去掉。
-        if (dd&gt; len) {
-            len =dd;
-            temp = s + &quot;最多&quot; + len;
-        }
-    }
-    alert(temp);    //g最多5；
-</code></pre><p><span style="width:100%;height:1px;background:#000;"></span></p>
-<pre><code>function quchong(arr){
-        var res=[];
-        for (i=0;i&lt;arr.length;i++) {
-            if(res.indexOf(arr[i])==-1){
-                res.push(arr[i]);
-            }
-        }
-        return res;
-    }
-    console.log(qu(Arr=[12,45,13,45,26,12,53,45]));  //[12,45,13,26,53]
+            <p>oUpperCase（）把字母转换为大写。</p>
+<p>toLowerCase（）把字母转换为小写。</p>
+<pre><code>ar arr=[];
+function capital(str){
+     arr=str.split(“ “);     //把字符串拆分成数组（以空号分割）
+     for(i=0;i&lt;str.length;i++){
+         arr[i]=arr[i][0].stoUpperCase()+arr[i].substring(1,arr[i].length);
+     }
+    var string=arr[i].join(“ “);     //把拆分的数组再转换为字符串返回给一个新的字符串。
+     return string;
+}
+console.log(capital(“aaa bbb ccc ddd”))   //Aaa Bbb Ccc Ddd
 </code></pre>
           
         

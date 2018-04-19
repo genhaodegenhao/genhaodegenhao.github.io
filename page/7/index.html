@@ -56,7 +56,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
 
 
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
@@ -242,7 +242,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/16/hexo博客的搭建/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/16/SEO优化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="genhao">
@@ -261,7 +261,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/05/16/hexo博客的搭建/" itemprop="url">hexo博客的搭建与遇到的问题解答</a></h1>
+                <a class="post-title-link" href="/2016/05/16/SEO优化/" itemprop="url">SEO优化</a></h1>
         
 
         <div class="post-meta">
@@ -313,71 +313,8 @@
       
         
           
-            <h4 id="1、安装Git"><a href="#1、安装Git" class="headerlink" title="1、安装Git"></a>1、安装Git</h4><p>从Git官网上下载，如果电脑安装过Xcode就不用下载了，因为Xcode自带Git。</p>
-<h4 id="2、安装node-js"><a href="#2、安装node-js" class="headerlink" title="2、安装node.js"></a>2、安装node.js</h4><p>hexo是一个基于bode.js的静态博客生成器，要先安装node.js才能保证hexo的正常运行。</p>
-<p>下载地址<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a>，推荐下载v4.4.4LTS稳定版。</p>
-<p>安装之后打开终端，输入</p>
-<pre><code>node -v
-</code></pre><p>出现node.js版本号，表示安装成功。</p>
-<h4 id="3、安装hexo"><a href="#3、安装hexo" class="headerlink" title="3、安装hexo"></a>3、安装hexo</h4><p>推荐用node.js自带的npm安装，在终端中输入以下指令：</p>
-<pre><code>sudo npm install -g hexo
-
-mpm install hexo-deployer-git -save
-</code></pre><h4 id="4、初始化hexo"><a href="#4、初始化hexo" class="headerlink" title="4、初始化hexo"></a>4、初始化hexo</h4><p>新建一个blog文件夹，路径自行选择，并在该文件夹下初始化hexo：</p>
-<pre><code>mkdir blog （新建一个文件夹）
-
-cd blog （进入一个文件夹）
-
-hexo init （初始化）
-
-npm install （npm安装）
-</code></pre><h4 id="5、本地启动测试"><a href="#5、本地启动测试" class="headerlink" title="5、本地启动测试"></a>5、本地启动测试</h4><pre><code>hexo server 或者缩写 hexo s
-</code></pre><p>在浏览器中输入 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>就可以查看自己新建的一个博客。</p>
-<h4 id="6、新建github仓库并获取二级域名"><a href="#6、新建github仓库并获取二级域名" class="headerlink" title="6、新建github仓库并获取二级域名"></a>6、新建github仓库并获取二级域名</h4><ul>
-<li>先去github官网注册一个自己的账号</li>
-<li>新建repository</li>
-<li>登录github账号后，点击右上角的“+”号按钮，选择“New repository”</li>
-<li>在repository name栏中填写：用户名.github.io</li>
-</ul>
-<p><code>注：用户名要和github账号用户名一致，仓库右上部分HTTPS中的内容即为二级域名。</code></p>
-<h4 id="7、生成SSH-Keys"><a href="#7、生成SSH-Keys" class="headerlink" title="7、生成SSH Keys"></a>7、生成SSH Keys</h4><p>目的是为了将本地git项目与github建立联系。</p>
-<p>登录github，找到右上角三角形，依次点击settings &gt; SHH and GPG keys &gt; New SSH key,自己起个title，接下来获取密钥。</p>
-<p>在终端输入：</p>
-<pre><code>ssh-keygen
-
-vim ~/.ssh/id_rsa.pub
-</code></pre><p>多按几次回车，生成密钥。</p>
-<p>众所周知，在OS系统中，复制文件内容到剪贴板的命令是：</p>
-<pre><code>pbcopy &lt; ~/.ssh/id_rsa.pub
-</code></pre><p>在Win7或者Win10下这条命令就没用了。可以这样：</p>
-<pre><code>clip &lt; ~/.ssh/id_rsa.pub
-</code></pre><h4 id="8、修改上传地址"><a href="#8、修改上传地址" class="headerlink" title="8、修改上传地址"></a>8、修改上传地址</h4><p>打开你init生成的blog文件夹下的<span style="color:red">_config.yml文件</span></p>
-<p>找到<span style="color:red">deploy</span></p>
-<p>添加<span style="color:red">type: git</span></p>
-<p>再添加一个属性<span style="color:red">repo:加上你的github仓库的HTTPS地址</span>保存即可。</p>
-<h4 id="9、添加博文"><a href="#9、添加博文" class="headerlink" title="9、添加博文"></a>9、添加博文</h4><pre><code>hexo new “filename”
-eg：hexo new 我的第一篇博客
-</code></pre><p>或者直接在source/_posts文件夹下直接创建一个以.md为后缀的文件。</p>
-<p>完成后在终端中输入：</p>
-<pre><code>hexo g
-hexo d
-</code></pre><p>这样就搭建好了属于自己的博客。</p>
-<p><strong>PS：以下为next博客主题供参考<a href="http://theme-next.iissnan.com/getting-started.html#menu-settings" target="_blank" rel="noopener">http://theme-next.iissnan.com/getting-started.html#menu-settings</a></strong></p>
-<h4 id="10、可能遇到的问题："><a href="#10、可能遇到的问题：" class="headerlink" title="10、可能遇到的问题："></a>10、可能遇到的问题：</h4><p><strong>1、部署时出现：Error：EACCES，open ‘/Users/Desktop/hexo/public/js/script.js’<br>    原因：权限问题。</strong></p>
-<pre><code>解决方法：在部署命令前加sudo。
-</code></pre><p><strong>2、deployer找不到git：ERROR Deployer not found: git</strong></p>
-<p>解决方法：</p>
-<pre><code>在终端输入：npm install hexo-deployer-git --save
-</code></pre><p><strong>3、hexo报错</strong></p>
-<pre><code>{ [Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos;] code:     &apos;MODULE_NOT_FOUND&apos; }
-{ [Error: Cannot find module &apos;./build/default/DTraceProviderBindings&apos;] code:     &apos;MODULE_NOT_FOUND&apos; }
-{ [Error: Cannot find module &apos;./build/Debug/DTraceProviderBindings&apos;] code:     &apos;MODULE_NOT_FOUND&apos; }
-</code></pre><p>解决方法：</p>
-<pre><code>$ npm install hexo --no-optional
-</code></pre><p><strong>4、Warning: Permanently added the RSA host key for IP address ‘192.30.253.113’ to the list of known hosts. Permission denied (publickey). fatal: Could not read from remote repository.</strong></p>
-<p>未获得ssh秘钥，可参考第7条获得秘钥。</p>
-<p><strong>5、bash: /dev/tty: No such device or address<br>error: failed to execute prompt script (exit code 1)<br>fatal: could not read Username for ‘<a href="https://github.com&#39;" target="_blank" rel="noopener">https://github.com&#39;</a>: No erro</strong></p>
-<p>将配置文件_config.yml中的deploy：https换成ssh；</p>
+            <h3 id="SEO优化标签"><a href="#SEO优化标签" class="headerlink" title="SEO优化标签"></a>SEO优化标签</h3><p>有利于SEO优化的标签：<br>1、meta keywords 十个左右<br>2、meta description 不要超过120个字符<br>3、h1-h6<br>4、strong<br>5、em<br>6、img alt src<br>7、b<br>8、title</p>
+<p><strong>虽然这些标签利于SEO优化但是，不建议用太多，页面内关键词使用建议不超过7次</strong></p>
 
           
         
