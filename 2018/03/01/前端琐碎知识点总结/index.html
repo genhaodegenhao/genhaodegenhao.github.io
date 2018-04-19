@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>前端琐碎知识点总结 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、跳转事件 1、location.href=’http://www.xxx.com/&amp;#39;;    可返回上一页面 2、location.replace(‘http://www.xxx.com/&amp;#39;);    不可返回上一页面 两者的不同之处是前者会在浏览器的历史浏览记录（history对象中）增加一条新的记录，而后者则是相当于用replace中的url代替了现有的页面url，并把hi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端琐碎知识点总结">
+<meta property="og:url" content="http://yoursite.com/2018/03/01/前端琐碎知识点总结/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、跳转事件 1、location.href=’http://www.xxx.com/&amp;#39;;    可返回上一页面 2、location.replace(‘http://www.xxx.com/&amp;#39;);    不可返回上一页面 两者的不同之处是前者会在浏览器的历史浏览记录（history对象中）增加一条新的记录，而后者则是相当于用replace中的url代替了现有的页面url，并把hi">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-04-18T06:55:39.494Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端琐碎知识点总结">
+<meta name="twitter:description" content="一、跳转事件 1、location.href=’http://www.xxx.com/&amp;#39;;    可返回上一页面 2、location.replace(‘http://www.xxx.com/&amp;#39;);    不可返回上一页面 两者的不同之处是前者会在浏览器的历史浏览记录（history对象中）增加一条新的记录，而后者则是相当于用replace中的url代替了现有的页面url，并把hi">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-前端琐碎知识点总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/01/前端琐碎知识点总结/" class="article-date">
+  <time datetime="2018-03-01T09:40:16.000Z" itemprop="datePublished">2018-03-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前端琐碎知识点总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、跳转事件</p>
+<p>1、location.href=’<a href="http://www.xxx.com/&#39;" target="_blank" rel="noopener">http://www.xxx.com/&#39;</a>;    <span style="color:red">可返回上一页面</span></p>
+<p>2、location.replace(‘<a href="http://www.xxx.com/&#39;)" target="_blank" rel="noopener">http://www.xxx.com/&#39;)</a>;    <span style="color:red">不可返回上一页面</span></p>
+<p>两者的不同之处是前者会在浏览器的历史浏览记录（history对象中）增加一条新的记录，而后者则是相当于用replace中的url代替了现有的页面url，并把history中的url也替换为重定向后的url。</p>
+<p>二、a标签的target属性</p>
+<p>_blank    在新窗口中打开链接。</p>
+<p>_self    默认。在相同的框架中打开链接。</p>
+<p>_parent    在父框架集中打开链接。</p>
+<p>_top    在整个窗口中打开链接。</p>
+<p>三、姓名加*设置</p>
+<p>1、姓名头尾显示一个汉字,中间一个*号加密</p>
+<pre><code>const str = &apos;根号三&apos;;
+const reg = /^(.).+(.)$/g;
+  console.log(str.replace(reg, &quot;$1*$2&quot;));    //根*三
+</code></pre><p>2、2字姓名加密第一个汉字</p>
+<pre><code>const str = &apos;根号&apos;；
+console.log(str.splice(0, 1, &apos;*&apos;));    //*号
+
+function plusXing (str,frontLen,endLen) { 
+    var len = str.length-frontLen-endLen;
+    var xing = &apos;&apos;;
+    for (var i=0;i&lt;len;i++) {
+        xing+=&apos;*&apos;;
+    }
+    return str.substring(0,frontLen)+xing+str.substring(str.length-endLen);
+ }
+ var name = &apos;张三根号&apos;;
+ var tel = &apos;13912345678&apos;;
+ var code = &apos;621567199090908987&apos;;
+ console.log(plusXing(name, 1, 1)); //*三根号
+ console.log(plusXing(tel, 3, 4)); //139****5678
+ console.log(plusXing(code, 3, 4)); //621********8987
+</code></pre><p>四、js 对象转数组</p>
+<pre><code>var arr = []
+for (var i in object) {
+    arr.push(object[i]); //属性
+    //arr.push(object[i]); //值
+}
+console.log(arr);
+</code></pre><p>五、按钮固定页面底部而不随键盘的出现被顶上去；</p>
+<pre><code>安卓下，fixed定位在页面底部，弹出键盘后会被顶上去，解决方法：
+
+let winHeight = $(window).height(); //获取当前页面高度
+$(window).resize(function() {
+  let thisHeight = $(this).height();
+  if (winHeight - thisHeight &gt; 50) {
+    //当软键盘弹出，在这里面操作
+    $(&apos;body&apos;).css(&apos;height&apos;, winHeight + &apos;px&apos;);
+  } else {
+    //当软键盘收起，在此处操作
+    $(&apos;body&apos;).css(&apos;height&apos;, &apos;100%&apos;);
+  }
+});
+</code></pre><p>六、光标颜色控制</p>
+<pre><code>caret-color：red;
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/01/前端琐碎知识点总结/" data-id="cjg68mfdi0000pkm01yhf9re4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/04/19/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/04/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/01/前端琐碎知识点总结/">前端琐碎知识点总结</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
