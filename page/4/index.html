@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/4/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-JSON" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/05/JSON/" class="article-date">
+  <time datetime="2016-12-05T02:26:26.000Z" itemprop="datePublished">2016-12-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/05/JSON/">JSON</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>JSON其实很简单</p>
+<p>就是一个轻量级的数据格式 </p>
+<p>可以简化表示复杂数据结构的工作量 </p>
+<p>主要要掌握ES5的全局对象JSON中的两个方法JSON.stringify()和JSON.parse() </p>
+<p>总结几个要记住的重点</p>
+<p>JSON.stringify() </p>
+<p>用于把JavaScript对象转换为JSON字符串 </p>
+<p>可填写额外两个参数-筛选数组/替换函数和指定缩进 </p>
+<p>对象遇到undefined、function、symbol（ES6）会忽略</p>
+<p>数组遇到undefined、function、symbol（ES6）会返回null</p>
+<p>JSON.parse() </p>
+<p>用于把JSON字符串转换为JavaScript对象 </p>
+<p>可填写额外一个参数-还原函数</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/05/JSON/" data-id="cjg6997z70001v8m0h2yo6b83" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json/">json</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-密码显示和隐藏" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/02/密码显示和隐藏/" class="article-date">
+  <time datetime="2016-12-02T04:00:52.000Z" itemprop="datePublished">2016-12-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/02/密码显示和隐藏/">密码显示和隐藏</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>html代码：</p>
+<pre><code>&lt;input type=&quot;password&quot; id=&quot;txtPassword&quot;/&gt;
+&lt;div id=&quot;togglePassword&quot;&gt;
+    &lt;button class=&quot;hidePwd&quot;&gt;隐藏密码&lt;/button&gt;
+    &lt;button class=&quot;showPwd&quot;&gt;显示密码&lt;/button&gt;
+&lt;/div&gt;    
+</code></pre><p>js代码：</p>
+<pre><code>$(function () {
+    $(&apos;#txtPassword&apos;).togglePassword({
+        el: &apos;#togglePassword&apos;
+    });
+});
+(function ($) {
+    $.fn.togglePassword = function (options) {
+        var s = $.extend($.fn.togglePassword.defaults, options),
+        input = $(this);
+        $(s.el).bind(s.ev, function () {
+            &quot;password&quot; == $(input).attr(&quot;type&quot;) ?
+                $(input).attr(&quot;type&quot;, &quot;text&quot;) :
+                $(input).attr(&quot;type&quot;, &quot;password&quot;);
+        });
+    };
+    $.fn.togglePassword.defaults = {
+        ev: &quot;click&quot;,
+    };
+}(jQuery));
+$(&quot;#togglePassword&quot;).click(function () {
+    $(&quot;.hidePwd&quot;).toggle();
+    $(&quot;.showPwd&quot;).toggle();
+});
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/02/密码显示和隐藏/" data-id="cjg69982h002jv8m0qoshvf07" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/密码-显示-隐藏/">密码 显示 隐藏</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-less学习小总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/01/less学习小总结/" class="article-date">
+  <time datetime="2016-12-01T02:55:56.000Z" itemprop="datePublished">2016-12-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/01/less学习小总结/">less学习小总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="less特点"><a href="#less特点" class="headerlink" title="less特点"></a>less特点</h3><p>学习一门语言或者技术之前要知道它是什么，怎么使用，有什么特点，能解决什么样的问题。</p>
+<p style="color:red">（百度了很多关于less使用的文章，但是都不尽如人意，大多都是介绍less的优点，和sass的对比，至于具体怎样使用说的都是很模糊的，看了文章之后还是不知道怎样着手去做，所以我就自己去摸索，在学习过程中把每一步都进行了总结，希望能帮到想学习less的同源人。）</p>
+
+<h4 id="less："><a href="#less：" class="headerlink" title="less："></a>less：</h4><p>一、它是一门css预处理器</p>
+<p>二、使用：安装node（可参考我之前的文章），新建一个项目文件夹，点击右键打开git bash，在终端中输入命令行</p>
+<pre><code>npm install -g less
+</code></pre><p>完成安装之后如下图所示：</p>
+<p><img src="http://ww2.sinaimg.cn/mw1024/006vSKfZgw1fab5zfzm4yj30om06l401.jpg" alt=""></p>
+<p>在项目文件下新建一个index.less（名字随便起）的文件，然后进行编译，在终端中输入</p>
+<pre><code>lessc index.less &gt; index.css
+</code></pre><p>不报错证明编译成功。在html中引入该index.css文件，更改index.less中的代码，需重新编译后同步到index.css文件中。</p>
+<p>三、特点：</p>
+<p>1、可声明变量：</p>
+<p>less代码:</p>
+<pre><code>@background-color: #ffffff;
+@text-color: #1A237E;
+p{
+      background-color: @background-color;
+      color: @text-color;
+      padding: 15px;
+}
+ul{
+      background-color: @background-color;
+}
+li{
+      color: @text-color;
+}
+</code></pre><p>编译完之后的css代码：</p>
+<pre><code>p{
+    background-color: #ffffff;
+    color: #1A237E;
+    padding: 15px;
+}
+ul{
+    background-color: #ffffff;
+}
+li{
+    color: #1A237E;
+}
+</code></pre><p><strong>如果需要修改p标签和ul标签的background-color，只需要修改声明的变量即可；</strong></p>
+<p>2、Maxin</p>
+<p>Less 允许我们将已有的 class 和 id 的样式应用到另一个不同的选择器上。 下面这个例子可以清楚地说明这一点。</p>
+<pre><code>#circle{
+  background-color: #4CAF50;
+  border-radius: 100%;
+}
+#small-circle{
+  width: 50px;
+  height: 50px;
+  #circle
+}
+#big-circle{
+  width: 100px;
+  height: 100px;
+  #circle
+}
+</code></pre><p>将其转换成 CSS 代码如下</p>
+<pre><code>#circle {
+    background-color: #4CAF50;
+    border-radius: 100%;
+}
+#small-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #4CAF50;
+    border-radius: 100%;
+}
+#big-circle {
+    width: 100px;
+    height: 100px;
+    background-color: #4CAF50;
+    border-radius: 100%;
+}
+</code></pre><p>如果你不想 mixin 也以一种规则的形式出现在 CSS 代码中，那么你可以在它的后面加上括号：</p>
+<pre><code>#circle(){
+    background-color: #4CAF50;
+    border-radius: 100%;
+}
+#small-circle{
+    width: 50px;
+    height: 50px;
+    #circle
+}
+#big-circle{
+    width: 100px;
+    height: 100px;
+    #circle
+}
+</code></pre><p>此时编译成 CSS :</p>
+<pre><code>#small-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #4CAF50;
+    border-radius: 100%;
+}
+#big-circle {
+    width: 100px;
+    height: 100px;
+    background-color: #4CAF50;
+    border-radius: 100%;
+}
+</code></pre><p>Mixin 另一个比较酷的功能就是它支持传入参数，下面这个例子就为 circle 传入一个指定宽高的参数，默认是 25px。 这将创建一个 25×25的小圆和一个 100×100 的大圆。</p>
+<pre><code>#circle(@size: 25px){
+    background-color: #4CAF50;
+    border-radius: 100%;
+    width: @size;
+    height: @size;
+}
+#small-circle{
+    #circle
+}
+#big-circle{
+    #circle(100px)
+}
+</code></pre><p>转换成 CSS :</p>
+<pre><code>#small-circle {
+    background-color: #4CAF50;
+    border-radius: 100%;
+    width: 25px;
+    height: 25px;
+}
+#big-circle {
+    background-color: #4CAF50;
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+}
+</code></pre><p>3、嵌套</p>
+<p>嵌套可用于以与页面的HTML结构相匹配的方式构造样式表，同时减少了冲突的机会。下面是一个无序列表的例子。</p>
+<pre><code>ul{
+    background-color: #03A9F4;
+    padding: 10px;
+    list-style: none;
+
+    li{
+        background-color: #fff;
+        border-radius: 3px;
+        margin: 10px 0;
+    }
+}
+</code></pre><p>编译成 CSS 代码：</p>
+<pre><code>ul {
+    background-color: #03A9F4;
+    padding: 10px;
+    list-style: none;
+}
+ul li {
+    background-color: #fff;
+    border-radius: 3px;
+    margin: 10px 0;
+}
+</code></pre><p>就像在其它高级语言中一样， Less 的变量根据范围接受它们的值。如果在指定范围内没有关于变量值的声明， less 会一直往上查找，直至找到离它最近的声明。</p>
+<p>回到 CSS 中来，我们的 li 标签将有白色的文本，如果我们在 ul 标签中声明 @text-color 规则。</p>
+<pre><code>@text-color: #000000;
+ul{
+    @text-color: #fff;
+    background-color: #03A9F4;
+    padding: 10px;
+    list-style: none;
+    li{
+        color: @text-color;
+        border-radius: 3px;
+        margin: 10px 0;
+    }
+}
+</code></pre><p>编译生成的 CSS 代码如下：</p>
+<pre><code>ul {
+    background-color: #03A9F4;
+    padding: 10px;
+    list-style: none;
+}
+ul li {
+    color: #ffffff;
+    border-radius: 3px;
+    margin: 10px 0;
+}
+</code></pre><p>4、运算</p>
+<p>你可以对数值和颜色进行基本的数学运算。比如说我们想要两个紧邻的 div 标签，第二个标签是第一个标签的两倍宽并且拥有不同的背景色。</p>
+<pre><code>@div-width: 100px;
+@color: #03A9F4;
+div{
+    height: 50px;
+    display: inline-block;
+}
+#left{
+    width: @div-width;
+    background-color: @color - 100;
+}
+#right{
+    width: @div-width * 2;
+    background-color: @color;
+}
+</code></pre><p>编译成 CSS 如下：</p>
+<pre><code>div {
+    height: 50px;
+    display: inline-block;
+}
+#left {
+    width: 100px;
+    background-color: #004590;
+}
+#right {
+    width: 200px;
+    background-color: #03a9f4;
+}
+</code></pre><p>5、函数</p>
+<p>Less 中也有函数，这让它看起来像一门编程语言了，不是吗？</p>
+<p>让我们来看一下  fadeout， 一个降低颜色透明度的函数。</p>
+<pre><code>@var: #004590;
+
+div{
+  height: 50px;
+  width: 50px;
+  background-color: @var;
+  &amp;:hover{
+    background-color: fadeout(@var, 50%)
+  }
+}
+</code></pre><p>编译成 CSS 如下所示：</p>
+<pre><code>div {
+    height: 50px;
+    width: 50px;
+    background-color: #004590;
+}
+div:hover {
+    background-color: rgba(0, 69, 144, 0.5);
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/01/less学习小总结/" data-id="cjg69981h001iv8m0dhs3a0kq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/less/">less</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js里面插入媒体查询" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/11/js里面插入媒体查询/" class="article-date">
+  <time datetime="2016-11-11T02:20:30.000Z" itemprop="datePublished">2016-11-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/11/js里面插入媒体查询/">js里面插入媒体查询</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="js里面插入媒体查询"><a href="#js里面插入媒体查询" class="headerlink" title="js里面插入媒体查询"></a>js里面插入媒体查询</h3><pre><code>var mq=window.matchMedia(&apos;screen and (min-width: 800px)&apos;);
+
+//当媒体查询的状态改变时,例如页面由799变成了801px
+mq.addListener(widthWatch);
+function widthWatch(){
+       if(mq.matches){
+        //........满足条件
+    }else{
+        //........
+    }
+}
+widthWatch();
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/11/js里面插入媒体查询/" data-id="cjg69981f001gv8m0vc64huno" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js-媒体查询/">js 媒体查询</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-注册页面的手机号一致问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/10/注册页面的手机号一致问题/" class="article-date">
+  <time datetime="2016-11-10T08:26:30.000Z" itemprop="datePublished">2016-11-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/10/注册页面的手机号一致问题/">判断注册页面的手机号一致问题解决</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>直接上代码，自己研究，不适用请提意见，勿喷！！！</p>
+<pre><code>&lt;input id=&quot;phone&quot; type=&quot;tel&quot; placeholder=&quot;手机号&quot;&gt; 
+var phone = &quot;&quot;;
+function testPhone(){
+    var phone = document.getElementById(&quot;phone&quot;);
+    if(phone.value != phone){
+        alert(&quot;手机号不一致！请重新输入！&quot;)；
+        return;
+    }
+}
+testPhone();
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/10/注册页面的手机号一致问题/" data-id="cjg6998310034v8m0i99pnt6g" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/手机号-一致/">手机号 一致</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js获取url地址中带有的参数值" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/03/js获取url地址中带有的参数值/" class="article-date">
+  <time datetime="2016-11-03T02:30:30.000Z" itemprop="datePublished">2016-11-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/03/js获取url地址中带有的参数值/">js获取url地址中带有的参数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="如何用js获取url地址中带有的参数"><a href="#如何用js获取url地址中带有的参数" class="headerlink" title="如何用js获取url地址中带有的参数"></a>如何用js获取url地址中带有的参数</h3><p>如：url = <a href="http://www.baidu.com?id=2&amp;http://www.genhao.cn" target="_blank" rel="noopener">http://www.baidu.com?id=2&amp;http://www.genhao.cn</a></p>
+<pre><code>function GetUrlValue() {
+    var url = location.search; //获取url中&quot;?&quot;符后的字串
+    var theRequest = new Object();
+    if (url.indexOf(&quot;?&quot;) != -1) {
+        var str = url.substr(1);
+        strs = str.split(&quot;&amp;&quot;);
+        for(var i = 0; i &lt; strs.length; i ++) {
+             //url中参数为中文的话可加decodeURI防止乱码
+             theRequest[strs[i].split(&quot;=&quot;)[0]]=return decodeURI(strs[i].split(&quot;=&quot;)[1]);
+        }
+    }
+    return theRequest;
+}
+var Value = new Object();
+Value = GetUrlValue();
+</code></pre><p>如果想要获取url后面的id=index，</p>
+<pre><code>var val = Value[&quot;id&quot;];
+console.log(val);  // 2
+</code></pre><p>如果想要获取url（id）后面的参数:</p>
+<pre><code>var val = Value[&quot;url&quot;];
+console.log(val);  // http://www.genhao.cn
+</code></pre><h2>亲测可用！</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/03/js获取url地址中带有的参数值/" data-id="cjg69981d001ev8m072tcsi67" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/url-参数/">url 参数</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-img标签间距问题.原因及解决方" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/29/img标签间距问题.原因及解决方/" class="article-date">
+  <time datetime="2016-09-29T06:30:30.000Z" itemprop="datePublished">2016-09-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/29/img标签间距问题.原因及解决方/">img标签间距问题.原因及解决方法md</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="img标签间距产生的原因"><a href="#img标签间距产生的原因" class="headerlink" title="img标签间距产生的原因"></a>img标签间距产生的原因</h3><p>块级元素包含内联元素如图片文字等时，内联元素默认是和父级元素的baseline（基线）对齐的，而<span style="color:red">baseline又和父级元素底边有一定的距离（这个距离和font有关，不一定是5px）</span>，所以以上代码的效果中不同div之间有间隙，这是因为图片与父元素的底边有距离。说到baseline呢，其实它是<span style="color:red">vertical-align属性的默认值</span>，vertical-align属性是设置元素的垂直排列的，用来定义行内元素的基线相对于该元素所在行的基线的垂直对齐，除了baseline对齐方式之外，还可以是sub | super | top | text-top | middle | bottom | text-bottom |inherit（任何的版本的Internet Explorer （包括 IE8）都不支持属性值 “inherit”）。</p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>1、设置img的vertical-align属性为bottom；</p>
+<p>2、给父元素加上font-size:0的属性，既然这个距离和font有关，那么把字体大小设为0，总该没有距离了吧；</p>
+<p>3、给父元素加上line-height，设置line-height不大于12px就能够消除间隙了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/29/img标签间距问题.原因及解决方/" data-id="cjg6998130016v8m0tkd9cnz9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/img-间距/">img 间距</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-简单三角形绘制" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/28/简单三角形绘制/" class="article-date">
+  <time datetime="2016-09-28T07:26:26.000Z" itemprop="datePublished">2016-09-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/28/简单三角形绘制/">div+css简单三角形绘制</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="div-css简单三角形绘制原理"><a href="#div-css简单三角形绘制原理" class="headerlink" title="div+css简单三角形绘制原理"></a>div+css简单三角形绘制原理</h3><p>主要原理是利用了相邻两个边框的接壤处分配原则，如果没有宽度和高度的话，其实应该是四个三角形接成的矩形。</p>
+<p>在矩形的直角，两条边的样式要均分，比如左上角 border-top 和 border-left 的样式要均分，如果border-left 无色透明， border-top有色， 就会出来一个45度的锐角。</p>
+<p>代码如下：</p>
+<pre><code>&lt;style&gt;
+    .box{
+        width:0; 
+        height:0;
+        line-height:0;
+        border:100px solid transparent; 
+        border-bottom-color:#ccc;
+        border-top:0;
+    }
+&lt;/style&gt;
+    &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+</code></pre><p>效果如图：<br>    <style><br>        .box{<br>            width:0;<br>            height:0;<br>            line-height:0;<br>            border:100px solid transparent;<br>            border-bottom-color:#ccc;<br>            border-top:0;<br>        }<br>    </style><br>        <div class="box"></div></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/28/简单三角形绘制/" data-id="cjg6998340038v8m0zi636m1m" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/三角形/">三角形</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-RenderBodyPageSection" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/27/RenderBodyPageSection/" class="article-date">
+  <time datetime="2016-09-27T06:30:18.000Z" itemprop="datePublished">2016-09-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/27/RenderBodyPageSection/">新的layout布局</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="要点："><a href="#要点：" class="headerlink" title="要点："></a>要点：</h3><p>A.Layout属性:等同于原来的MasterPageFile属性。</p>
+<p>B.@RenderBody()方法:直接渲染整个View到占位符处,而不需要原来所使用的&lt;asp:Content /&gt;。</p>
+<p>C.@RenderPage()方法:渲染指定的页面到占位符处。</p>
+<p>D.@RenderSection方法:声明一个占位符,和原来的&lt;asp:ContentPlaceHolder /&gt;功能类似。</p>
+<p>E.@section标记:对@RenderSection方法声明的占位符进行实现,和原来的&lt;asp:Content /&gt;功能类似。</p>
+<h3 id="1-RenderBody-方法的使用"><a href="#1-RenderBody-方法的使用" class="headerlink" title="1.@RenderBody()方法的使用"></a>1.@RenderBody()方法的使用</h3><p>首先在~/Views/Shared/下创建一个名为_MyLayout.cshtml的LayoutPage文件,并将默认的内容替换为如下:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;@ViewBag.Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;
+        开始渲染Body&lt;br /&gt;
+        @RenderBody()
+        渲染Body结束&lt;br /&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>然后打开在~/Views/Home/Index.cshtml文件并替换为如下的内容:</p>
+<pre><code>@{
+    ViewBag.Title = &quot;首页&quot;;
+}
+&lt;div&gt;
+        这里就是渲染Body啦。
+&lt;/div&gt;
+</code></pre><p>最后别忘记把~/Views/_ViewStart.cshtml中的Layout属性改为:<br>Layout = “~/Views/Shared/_MyLayout.cshtml”;</p>
+<p>浏览器输出：</p>
+<p>开始渲染Body</p>
+<p>这里就是渲染Body啦。</p>
+<p>渲染Body结束</p>
+<p style="color:gray;">在此,你或许会有疑问了.在_Layout中定义的RenderBody()是Render那个页啊?<br><br>答:其实最后Render页的归属就是Render你所访问的那个页,比如你访问/Home/Index.那么Render就是Home控制器下的Index.cshtml这个文件, 如果访问的是/Ohter/SomePage时,那么Render的是Ohter控制器下的SomePage这个.cshtml!</p>
+
+<h3 id="2-RenderPage-方法的使用"><a href="#2-RenderPage-方法的使用" class="headerlink" title="2.@RenderPage()方法的使用"></a>2.@RenderPage()方法的使用</h3><p>在~/Views/Home/文件夹下新建立一个ViewPage1.cshtml文件,将内容改为如下:</p>
+<pre><code>&lt;div&gt;
+        这里是~/Views/Home/ViewPage1.cshtml
+&lt;/div&gt;
+</code></pre><p>并在原来的_MyLayout.cshtml文件中增加几行代码变成下面的这个样子:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;@ViewBag.Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;
+        开始渲染Body&lt;br /&gt;
+        @RenderBody()
+        渲染Body结束&lt;br /&gt;
+        &lt;br /&gt;
+        开始渲染其他页1&lt;br /&gt;
+        @RenderPage(&quot;~/Views/Home/ViewPage1.cshtml&quot;)
+        渲染其他页结束1&lt;br /&gt;
+        开始渲染其他页2&lt;br /&gt;
+        @RenderPage(&quot;~/Views/Home/ViewPage1.cshtml&quot;)
+        渲染其他页结束2&lt;br /&gt;
+        开始渲染其他页3&lt;br /&gt;
+        @RenderPage(&quot;~/Views/Home/ViewPage1.cshtml&quot;)
+        渲染其他页结束3&lt;br /&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>在这里记住:@RenderBody()只能在_Layout.cshtml中使用一次,而@RenderPage()则可以使用多次!另外@RenderPage()是直接定位View页面，不会运行对应的Action方法。</p>
+<h3 id="3-RenderSection方法和-section标记"><a href="#3-RenderSection方法和-section标记" class="headerlink" title="3.@RenderSection方法和@section标记"></a>3.@RenderSection方法和@section标记</h3><p>@RenderSection()方法等价于&lt;asp:ContentPlaceHolder /&gt;,用途为在Layout中声明一个占位符.<br>在原来的_MyLayout.cshtml文件中更改内容为如下:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;@ViewBag.Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;
+        开始渲染Body&lt;br /&gt;
+        @RenderBody()
+        渲染Body结束&lt;br /&gt;
+        &lt;br /&gt;
+        开始渲染其他页1&lt;br /&gt;
+        @RenderPage(&quot;~/Views/Home/ViewPage1.cshtml&quot;)
+        渲染其他页结束1&lt;br /&gt;
+        开始渲染其他页2&lt;br /&gt;
+        @RenderPage(&quot;~/Views/Home/ViewPage1.cshtml&quot;)
+        渲染其他页结束2&lt;br /&gt;
+        开始渲染其他页3&lt;br /&gt;
+        @RenderPage(&quot;~/Views/Home/ViewPage1.cshtml&quot;)
+        渲染其他页结束3&lt;br /&gt;
+        &lt;br /&gt;
+        HOHO,开始学习Section了&lt;br /&gt;
+        开始渲染Section&lt;br /&gt;
+        声明方式1(推荐):SectionA:&lt;br /&gt;
+        @RenderSection(&quot;SectionA&quot;, false)
+        -------&lt;br /&gt;
+
+        声明方式2:SectionB:&lt;br /&gt;
+        @{
+            if (IsSectionDefined(&quot;SectionB&quot;))
+            {
+                @RenderSection(&quot;SectionB&quot;)
+            }
+        }
+        -------&lt;br /&gt;
+        渲染Sction结束&lt;br /&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>在~/Views/Home/Index.cshtml中更改为如下内容:</p>
+<pre><code>@{
+    ViewBag.Title = &quot;首页&quot;;
+}
+
+@section SectionA{
+    &lt;div&gt;这里是SectionA:也不需要写神马runat=&quot;server&quot;啊,有木有&lt;/div&gt;
+}
+
+@section SectionB{
+    &lt;div&gt;这里是SectionB:也不需要写神马&amp;lt;asp:Content /&amp;gt啊,有木有&lt;/div&gt;
+}
+
+&lt;div&gt;
+    这里就是渲染Body啦.~~不需要写神马&amp;lt;asp:Content /&amp;gt;,其实因为RenderBody()不在有歧义.
+&lt;/div&gt;
+</code></pre><p>最后显示结果：<br>开始渲染Body</p>
+<p>这里就是渲染Body啦.</p>
+<p>渲染Body结束</p>
+<p>开始渲染其他页1</p>
+<p>这里是~/Views/Home/ViewPage1.cshtml</p>
+<p>str1</p>
+<p>str2<br>渲染其他页结束</p>
+<p>开始渲染其他页2</p>
+<p>这里是~/Views/Home/ViewPage1.cshtml</p>
+<p>str1</p>
+<p>str2</p>
+<p>渲染其他页结束</p>
+<p>开始渲染其他页3</p>
+<p>这里是~/Views/Home/ViewPage1.cshtml</p>
+<p>str1</p>
+<p>str2</p>
+<p>渲染其他页结束</p>
+<p>HOHO,开始学习Section了</p>
+<p>开始渲染Section</p>
+<p>声明方式1(推荐):SectionA:</p>
+<p>这里是SectionA</p>
+<hr>
+<p>声明方式2:SectionB:</p>
+<p>这里是SectionB</p>
+<hr>
+<p>渲染Sction结束</p>
+<p>问:为什么为什么要推荐方式1呢?</p>
+<p>答:因为RenderSection()方法有2个重载.</p>
+<p>如果使用第一个只接受一个string类型参数的重载的话.~如果你在具体的View中没有利用@section来定义实现的话,运行会报错.所以需要配合另外一个方法IsSectionDefined()来使用,才能防止报错.</p>
+<p>而使用第2个重载就可以利用第二个bool类型的参数指明该Section是否为必须的.所以可以在使用该RenderSection方法的时候直接利用第二个重载,再把bool参数值设为false。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/27/RenderBodyPageSection/" data-id="cjg6997zi0003v8m0pa0pqqrr" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Render-Section-Page/">Render Section Page</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-meta标签里的content属性" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/26/meta标签里的content属性/" class="article-date">
+  <time datetime="2016-09-26T09:25:30.000Z" itemprop="datePublished">2016-09-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/26/meta标签里的content属性/">meta标签里的content属性</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="META"><a href="#META" class="headerlink" title="META"></a>META</h3><p>meta标签分两大部分：HTTP标题信息（http-equiv）和页面描述信息（name）。</p>
+<pre><code>&lt;meta name=&quot;apple-touch-fullscreen&quot; content=&quot;yes&quot;&gt;
+</code></pre><p>添加到主屏幕“后，全屏显示</p>
+<pre><code>&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot; /&gt;
+</code></pre><p>这meta的作用就是删除默认的苹果工具栏和菜单栏。</p>
+<p>content有两个值”yes”和”no”,当我们需要显示工具栏和菜单栏时，这个行meta就不用加了，默认就是显示。</p>
+<pre><code>&lt;meta name=”apple-mobile-web-app-status-bar-style” content=black” /&gt; 
+</code></pre><p>默认值为default（白色），可以定为black（黑色）和black-translucent（灰色半透明）。</p>
+<h3 id="一般放这三个足已"><a href="#一般放这三个足已" class="headerlink" title="一般放这三个足已"></a>一般放这三个足已</h3><pre><code>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=utf-8&quot;&gt;
+&lt;meta http-equiv=&quot;description&quot; name=&quot;description&quot; content=&quot;描述&quot;&gt;
+&lt;meta name=&quot;keywords&quot; http-equiv=&quot;keywords&quot; content=&quot;关键字&quot;&gt;
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/26/meta标签里的content属性/" data-id="cjg69981j001lv8m03avnlj7v" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/meta-content/">meta content</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/F7-无限滚动加载-菜单/">F7 无限滚动加载 菜单</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QQ浏览器/">QQ浏览器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Render-Section-Page/">Render Section Page</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SEO/">SEO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call-apply/">call apply</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/clip-裁剪/">clip 裁剪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie-登录-用户名显示/">cookie 登录 用户名显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/get-post/">get post</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-文件推送-线上仓库/">github 文件推送 线上仓库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-博客/">hexo 博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-博客-favicon/">hexo 博客 favicon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/img-间距/">img 间距</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript语法特性/">javascript语法特性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery-坑/">jquery 坑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-媒体查询/">js 媒体查询</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json/">json</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/less/">less</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/meta-content/">meta content</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-framework7-历史搜索-热门搜索/">react framework7 历史搜索 热门搜索</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-webpack/">react webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swiper-选项卡-hover效果/">swiper 选项卡 hover效果</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this/">this</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/url-参数/">url 参数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-src/">vue src</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows-hexo-博客/">windows hexo 博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows-终端/">windows 终端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三角形/">三角形</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/事件代理-委托/">事件代理/委托</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/伪元素/">伪元素</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数/">函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端-html5/">前端 html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/匿名函数-自执行/">匿名函数 自执行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多球运动/">多球运动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/头部-底部/">头部 底部</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/密码-显示-隐藏/">密码 显示 隐藏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信分享/">微信分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/手机号-一致/">手机号 一致</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/次数最多-去重/">次数最多 去重</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度统计/">百度统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/端口号-冲突/">端口号 冲突</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自适应/">自适应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/解析-合并-压缩/">解析 合并 压缩</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/首字母-大写/">首字母 大写</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/F7-无限滚动加载-菜单/" style="font-size: 10px;">F7 无限滚动加载 菜单</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/QQ浏览器/" style="font-size: 10px;">QQ浏览器</a> <a href="/tags/Render-Section-Page/" style="font-size: 10px;">Render Section Page</a> <a href="/tags/SEO/" style="font-size: 10px;">SEO</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/call-apply/" style="font-size: 10px;">call apply</a> <a href="/tags/canvas/" style="font-size: 20px;">canvas</a> <a href="/tags/clip-裁剪/" style="font-size: 10px;">clip 裁剪</a> <a href="/tags/cookie-登录-用户名显示/" style="font-size: 10px;">cookie 登录 用户名显示</a> <a href="/tags/get-post/" style="font-size: 10px;">get post</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/github-文件推送-线上仓库/" style="font-size: 10px;">github 文件推送 线上仓库</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/hexo-博客/" style="font-size: 10px;">hexo 博客</a> <a href="/tags/hexo-博客-favicon/" style="font-size: 10px;">hexo 博客 favicon</a> <a href="/tags/img-间距/" style="font-size: 10px;">img 间距</a> <a href="/tags/javascript语法特性/" style="font-size: 10px;">javascript语法特性</a> <a href="/tags/jquery-坑/" style="font-size: 10px;">jquery 坑</a> <a href="/tags/js-媒体查询/" style="font-size: 10px;">js 媒体查询</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/less/" style="font-size: 10px;">less</a> <a href="/tags/meta-content/" style="font-size: 10px;">meta content</a> <a href="/tags/react-framework7-历史搜索-热门搜索/" style="font-size: 10px;">react framework7 历史搜索 热门搜索</a> <a href="/tags/react-webpack/" style="font-size: 10px;">react webpack</a> <a href="/tags/swiper-选项卡-hover效果/" style="font-size: 10px;">swiper 选项卡 hover效果</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/url-参数/" style="font-size: 10px;">url 参数</a> <a href="/tags/vue-src/" style="font-size: 10px;">vue src</a> <a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a> <a href="/tags/windows-hexo-博客/" style="font-size: 10px;">windows hexo 博客</a> <a href="/tags/windows-终端/" style="font-size: 10px;">windows 终端</a> <a href="/tags/三角形/" style="font-size: 10px;">三角形</a> <a href="/tags/事件代理-委托/" style="font-size: 10px;">事件代理/委托</a> <a href="/tags/伪元素/" style="font-size: 10px;">伪元素</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/前端-html5/" style="font-size: 10px;">前端 html5</a> <a href="/tags/匿名函数-自执行/" style="font-size: 10px;">匿名函数 自执行</a> <a href="/tags/多球运动/" style="font-size: 10px;">多球运动</a> <a href="/tags/头部-底部/" style="font-size: 10px;">头部 底部</a> <a href="/tags/密码-显示-隐藏/" style="font-size: 10px;">密码 显示 隐藏</a> <a href="/tags/微信分享/" style="font-size: 10px;">微信分享</a> <a href="/tags/手机号-一致/" style="font-size: 10px;">手机号 一致</a> <a href="/tags/次数最多-去重/" style="font-size: 10px;">次数最多 去重</a> <a href="/tags/百度统计/" style="font-size: 10px;">百度统计</a> <a href="/tags/端口号-冲突/" style="font-size: 10px;">端口号 冲突</a> <a href="/tags/自适应/" style="font-size: 10px;">自适应</a> <a href="/tags/解析-合并-压缩/" style="font-size: 10px;">解析 合并 压缩</a> <a href="/tags/首字母-大写/" style="font-size: 10px;">首字母 大写</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/04/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/19/扫码付项目探坑和踩坑/">扫码付项目探坑和踩坑</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/01/前端琐碎知识点总结/">前端琐碎知识点总结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/05/overflow-scrolling-touch属性副作用/">-webkit-overflow-scrolling:touch属性副作用--QQ内置浏览器空白处理</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/30/微信分享功能实现/">微信分享（二次）功能实现--显示描述和缩略图</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

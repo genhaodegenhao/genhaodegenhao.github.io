@@ -97,7 +97,49 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/19/hello-world/" data-id="cjg6811jo0000z8m0m9ookqdd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/19/hello-world/" data-id="cjg69980v000yv8m0b0dgwxuo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-扫码付项目探坑和踩坑" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/19/扫码付项目探坑和踩坑/" class="article-date">
+  <time datetime="2018-03-19T11:57:08.000Z" itemprop="datePublished">2018-03-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/19/扫码付项目探坑和踩坑/">扫码付项目探坑和踩坑</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>提纲：</p>
+<p>1、微信/支付宝oauth2.0授权跳转；</p>
+<p>2、微信/支付宝的API调用扫描条形码功能，关闭当前页面和微信的分享功能；</p>
+<p>3、支付方式选择以及不同userAgent下的不同显示；</p>
+<p>4、二维码生成；</p>
+<p>5、微信/支付宝支付功能；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/19/扫码付项目探坑和踩坑/" data-id="cjg69982v002xv8m02a8rq6k8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -188,7 +230,400 @@ $(window).resize(function() {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/01/前端琐碎知识点总结/" data-id="cjg68mfdi0000pkm01yhf9re4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/01/前端琐碎知识点总结/" data-id="cjg699829002av8m0lowu3pyd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-overflow-scrolling-touch属性副作用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/05/overflow-scrolling-touch属性副作用/" class="article-date">
+  <time datetime="2017-12-05T13:30:47.000Z" itemprop="datePublished">2017-12-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/05/overflow-scrolling-touch属性副作用/">-webkit-overflow-scrolling:touch属性副作用--QQ内置浏览器空白处理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近遇到一个看似非常简单但处理起来也比较简单的bug，不卖关子，进入主题：</p>
+<p>使用framework7+react写了一个singlePage，IOS下的Safari，微信内置浏览器，谷歌浏览器，QQ浏览器等第三方浏览器均显示正常；</p>
+<p><span style="color:red">唯独QQ内置浏览器出现了不可预见的bug：向下/向上快速滑动页面的时候，页面会出现空白，等滑动结束后内容显示；</span>安卓无此问题。</p>
+<p>因为想让页面的滑动效果与原生一样，故添加了-webkit-overflow-scrolling:touch这个属性，（如果不了解这个属性，可参考<a href="https://www.cnblogs.com/wuyinghong/p/7450041.html?utm_source=debugrun&amp;utm_medium=referral" target="_blank" rel="noopener">这篇文章</a>；）增加惯性滑动的效果，页面滑动也像原生那样瞬间流畅了，哈哈；</p>
+<p>但是在QQ内置浏览器下快速滑动页面会出现空白，滑动停止后内容才显示，我考虑的是-webkit-overflow-scrolling:touch属性导致的，然后百度搜相关文章/博客均无解，感觉不会再爱了…在最绝望想和产品沟通的时候，无意间翻墙找到了解决的方法，特意分享出来：</p>
+<pre><code>-webkit-backface-visibility: hidden;
+-webkit-transform: translate3d(0,0,0);
+</code></pre><p>在滑动范围的父级添加以上css，即可解决；</p>
+<p>表达下我自己的看法：百度不是全能的，偶尔谷歌一下，也可以发现新大陆…</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/05/overflow-scrolling-touch属性副作用/" data-id="cjg69981i001kv8m0prsn2oum" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QQ浏览器/">QQ浏览器</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-微信分享功能实现" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/30/微信分享功能实现/" class="article-date">
+  <time datetime="2017-11-30T09:54:25.000Z" itemprop="datePublished">2017-11-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/30/微信分享功能实现/">微信分享（二次）功能实现--显示描述和缩略图</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近项目上要实现微信二次分享的功能。效果如下：</p>
+<p><img src="https://wx2.sinaimg.cn/mw690/006vSKfZgy1fm111t1lnrj30hi062zkt.jpg" alt=""></p>
+<p>==&gt;</p>
+<p><img src="https://wx3.sinaimg.cn/mw690/006vSKfZgy1fm111wln6vj30h5070jsm.jpg" alt=""></p>
+<p><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421141115" target="_blank" rel="noopener">微信官方描述</a>：</p>
+<p>自2017年4月25日起，JSSDK“分享到朋友圈”及“发送给朋友”接口，自定义的分享链接，其域名或路径必须与当前页面对应的公众号JS安全域名一致，否则将调用失败。</p>
+<p>对于未接入微信JSSDK或已接入但JSSDK调用失败的网页，被用户分享时，分享卡片将统一使用默认缩略图和标题简介，不允许自定义。</p>
+<p>balabala…意思就是要想通过微信分享获取上图所示效果，就要绑定安全域名并且引入微信的JSSDK。</p>
+<p>先看微信配置代码：</p>
+<pre><code>wx.config({
+  debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+  appId: data.appId, // 必填，公众号的唯一标识
+  timestamp: data.timestamp, // 必填，生成签名的时间戳
+  nonceStr: data.noncestr, // 必填，生成签名的随机串
+  signature: data.signature,// 必填，签名，见附录1
+  jsApiList: [
+    &apos;onMenuShareTimeline&apos;,
+    &apos;onMenuShareAppMessage&apos;,
+    &apos;onMenuShareQQ&apos;,
+    &apos;onMenuShareQZone&apos;
+  ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+});
+</code></pre><p>其中上述参数可从后台获取，出于安全考虑，开发者必须在服务器端实现签名的逻辑。</p>
+<p>遇到问题及解决方法：</p>
+<p>可参考<a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421141115" target="_blank" rel="noopener">微信公众号官方说明</a>，我想再补充一点自己的项目中遇到的问题及解决方式：</p>
+<p>1、”errMsg”:”config:fail,AppID 不合法”；</p>
+<p>原因：未获得后台返回的数据，appid为undefined；请求问题；</p>
+<p>解决方法：请求headers中添加pubData参数，并且 JSON.stringify 方法来处理。</p>
+<p>2、”errMsg”：”invalid signature”;</p>
+<p>原因：请求url中的参数是字符串格式，而不是json格式；</p>
+<p>解决方法：直接把请求参数以字符串的形式拼到url中。</p>
+<p>Tip:前端真的很神奇，用代码实现想要的结果。边走边学。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/30/微信分享功能实现/" data-id="cjg69982l002nv8m0vvoso3fz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信分享/">微信分享</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-商品搜索页面总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/17/商品搜索页面总结/" class="article-date">
+  <time datetime="2017-11-17T06:50:15.000Z" itemprop="datePublished">2017-11-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/17/商品搜索页面总结/">react+framework7实现商品搜索页面</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近在做一个移动端的搜索页面，功能包括历史搜索和热门搜索；如下图所示：</p>
+<p><img src="https://wx3.sinaimg.cn/mw690/006vSKfZgy1fll3jjb3zcj30980fi0sl.jpg" alt=""></p>
+<p>大致意思：当用户点击输入框的时候，会自动调起软键盘，输入内容后输入框后面会有个小×号，点击小×号可清空输入框内容，点击右边的取消会返回上一级，输入内容后可点击软键盘上的搜索按钮跳转到关键字的页面，并且把该关键字保存到历史搜索中，最多保存10条数据，点击清空出现提示，确定清空，取消无作用；点击每个关键词都会跳转到对应的页面。</p>
+<p>哈哈，有点啰嗦，直接看功能点。</p>
+<p>一、input：</p>
+<p>1、调起的软键盘右下角为搜索字样：</p>
+<pre><code>&lt;form action=&quot;#&quot;&gt;
+    &lt;input type=&quot;search&quot;/&gt;
+&lt;/form&gt;
+</code></pre><p>2、输入的值为空处理：</p>
+<pre><code>value.trim()
+</code></pre><p>3、监听软键盘上的搜索事件：</p>
+<p>react中用</p>
+<pre><code>event.which == 13；
+</code></pre><p>二、保存输入的内容：在向localStorage存储的时候，以点击搜索的时间戳为key，以搜索的词语为value.最多存储10条数据。当超过10条，会删除最早的记录。</p>
+<p>可参考<a href="http://www.cnblogs.com/hjptopshow/p/6694467.html" target="_blank" rel="noopener">这篇文章</a>；</p>
+<p>三、点击任意关键词跳转：</p>
+<pre><code>this.state.listItems.map((item, index) =&gt; {
+  return (
+    &lt;div className=&quot;listItem&quot; key={index} onClick={this.clickhref.bind(this, item)}&gt;{item}&lt;/div&gt;
+  );
+})
+
+clickhref = (item) =&gt; {
+  console.log(item);
+}
+</code></pre><p>给每个关键词绑定一个事件，并传入相应的item或者index值，就可以拿到对应的元素编号或者内容获取当前的关键字传入到clickhref方法中，再处理；</p>
+<p>可穿越到<a href="https://github.com/genhaodegenhao/hotgood" target="_blank" rel="noopener">我的github</a>中查看相关代码。</p>
+<p><span style="color:orange">意外收获</span>：</p>
+<p>1、-webkit-line-clamp: 2;保持文字行数（2行），超过显示省略号配合-webkit-box-orient使用；</p>
+<p>webpck不能编译这个属性-webkit-box-orient: vertical</p>
+<pre><code>/* autoprefixer: off*/
+-webkit-box-orient: vertical;
+/* autoprefixer: on*/
+</code></pre><p>2、react中给某个标签添加属性</p>
+<pre><code>{`text1 ${this.state.bol ? &apos;text2&apos; : &apos;text3&apos;}`}
+</code></pre><p>3、window.confirm (message, ok, cancel)；</p>
+<pre><code>window.app.confirm(&apos;是否删除？&apos;, () =&gt; {
+    console.log(&apos;ok&apos;);
+}, () =&gt; {
+   console.log(&apos;cancel&apos;);
+});
+</code></pre><p>4、position设置fixed，固定在页面的底部，随着页面滚动按钮也会抖动。这个页面主要发生在IOS的微信端；安卓正常；</p>
+<pre><code>-webkit-transform: translateZ(0);
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/17/商品搜索页面总结/" data-id="cjg69982n002pv8m09yp51fcc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react-framework7-历史搜索-热门搜索/">react framework7 历史搜索 热门搜索</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hexo博客添加站点缩略图-favicon" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/16/hexo博客添加站点缩略图-favicon/" class="article-date">
+  <time datetime="2017-11-16T05:46:53.000Z" itemprop="datePublished">2017-11-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/16/hexo博客添加站点缩略图-favicon/">hexo博客添加站点缩略图--favicon</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>把将ico放进Hexo下主题的/source/images文件夹下，并在_config.yml中修改对应路径即可：</p>
+<pre><code># Put your favicon.ico into `hexo-site/source/` directory.
+favicon: /images/favicon.ico
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/16/hexo博客添加站点缩略图-favicon/" data-id="cjg6998100012v8m0kwsflajh" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo-博客-favicon/">hexo 博客 favicon</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-display-flex和display-box的区别？" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/10/display-flex和display-box的区别？/" class="article-date">
+  <time datetime="2017-10-10T07:45:41.000Z" itemprop="datePublished">2017-10-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/10/display-flex和display-box的区别？/">display:flex和display:box的区别？</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>区别：父元素设置display:flex后，子元素宽度会随父元素宽度的改变而改变，display:box不会。</p>
+<p><img src="http://wx4.sinaimg.com/mw1024/006vSKfZgy1fkd6ivkyqej30ch0awzk6.jpg" alt=""></p>
+<p>缩小窗口后的区别：</p>
+<p><img src="http://wx2.sinaimg.cn/mw1024/006vSKfZgy1fkd6ixwae1j30650aat8m.jpg" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/10/display-flex和display-box的区别？/" data-id="cjg69980g000mv8m0aj93yeb2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-水平滚动加鼠标跟随" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/31/水平滚动加鼠标跟随/" class="article-date">
+  <time datetime="2017-08-31T09:42:38.000Z" itemprop="datePublished">2017-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/31/水平滚动加鼠标跟随/">水平滚动加鼠标跟随</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>html：</p>
+<pre><code>&lt;div class=&quot;wrapper&quot;&gt;
+    &lt;ul class=&quot;box&quot;&gt;
+        &lt;li class=&quot;menu current&quot;&gt;菜单一&lt;/li&gt;
+        &lt;li class=&quot;menu&quot;&gt;菜单二&lt;/li&gt;
+        &lt;li class=&quot;menu&quot;&gt;菜单三&lt;/li&gt;
+        &lt;li class=&quot;menu&quot;&gt;菜单四&lt;/li&gt;
+        &lt;li class=&quot;menu&quot;&gt;菜单五&lt;/li&gt;
+        &lt;li class=&quot;menu&quot;&gt;菜单六&lt;/li&gt;
+        &lt;li class=&quot;menu&quot;&gt;菜单七&lt;/li&gt;
+        &lt;li class=&quot;underline&quot;&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre><p>css：</p>
+<pre><code>.wrapper{width:80%;height:100px;margin:10px auto;background:#ddd;overflow:hidden}
+li{list-style:none}
+.box{white-space:nowrap;position:relative;text-align:center;overflow-x:auto;-webkit-overflow-scrolling:touch;-overflow-scrolling:touch;background:#fc0}
+.box::-webkit-scrollbar{display:none}
+.box .menu{display:inline-block;width:76px;line-height:50px;-webkit-transition:all .3s;transition:all .3s}
+.box .underline{position:absolute;bottom:0;left:0;width:76px;height:3px;background:red;display:inline-block;-webkit-transition:all .25s cubic-bezier(.4,0,.2,1);transition:all .25s cubic-bezier(.4,0,.2,1)}
+.current{color:red}
+</code></pre><p>js：</p>
+<pre><code>$(&apos;.menu&apos;).click(function(){
+    $(&apos;.menu&apos;).removeClass(&apos;current&apos;);
+    $(this).addClass(&apos;current&apos;);
+    //鼠标跟随效果
+    var l=$(&apos;.menu&apos;).width(); 
+    var m=$(this).index();
+    $(&apos;.underline&apos;).css({&apos;width&apos;: l,&apos;left&apos;:(l+3)*m});
+})
+</code></pre><h3>为了滑动顺畅，可添加属性：-webkit-overflow-scrolling: touch;-overflow-scrolling: touch;</h3>
+
+<h3 style="color:red">设置横向可滚动时，在ios下会有滚动条，若想隐藏ios下的滚动条可在改属性中设置.box::-webkit-scrollbar {display: none;}</h3>
+
+<p><a href="https://github.com/genhaodegenhao/Horizontal-slip" target="_blank" rel="noopener">查看更多demo</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/08/31/水平滚动加鼠标跟随/" data-id="cjg6998300033v8m05sm2vqfm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-元素垂直居中" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/18/元素垂直居中/" class="article-date">
+  <time datetime="2017-08-18T10:05:27.000Z" itemprop="datePublished">2017-08-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/18/元素垂直居中/">元素垂直居中（位置元素本身宽/高度）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="在不知道元素本身宽度和高度的情况下，可以使用以下方法使该元素相对于父元素垂直居中："><a href="#在不知道元素本身宽度和高度的情况下，可以使用以下方法使该元素相对于父元素垂直居中：" class="headerlink" title="在不知道元素本身宽度和高度的情况下，可以使用以下方法使该元素相对于父元素垂直居中："></a>在不知道元素本身宽度和高度的情况下，可以使用以下方法使该元素相对于父元素垂直居中：</h4><pre><code>.child{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /* 使用css3的transform来实现 */    
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/08/18/元素垂直居中/" data-id="cjg6998210022v8m0y8msw8uh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -200,6 +635,11 @@ $(window).resize(function() {
   
 
 
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
+
 </section>
         
           <aside id="sidebar">
@@ -208,15 +648,29 @@ $(window).resize(function() {
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/F7-无限滚动加载-菜单/">F7 无限滚动加载 菜单</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QQ浏览器/">QQ浏览器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Render-Section-Page/">Render Section Page</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SEO/">SEO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call-apply/">call apply</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/clip-裁剪/">clip 裁剪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie-登录-用户名显示/">cookie 登录 用户名显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/get-post/">get post</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-文件推送-线上仓库/">github 文件推送 线上仓库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-博客/">hexo 博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-博客-favicon/">hexo 博客 favicon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/img-间距/">img 间距</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript语法特性/">javascript语法特性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery-坑/">jquery 坑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-媒体查询/">js 媒体查询</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json/">json</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/less/">less</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/meta-content/">meta content</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-framework7-历史搜索-热门搜索/">react framework7 历史搜索 热门搜索</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-webpack/">react webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swiper-选项卡-hover效果/">swiper 选项卡 hover效果</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this/">this</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/url-参数/">url 参数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-src/">vue src</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows-hexo-博客/">windows hexo 博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows-终端/">windows 终端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三角形/">三角形</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/事件代理-委托/">事件代理/委托</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/伪元素/">伪元素</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数/">函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端-html5/">前端 html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/匿名函数-自执行/">匿名函数 自执行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多球运动/">多球运动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/头部-底部/">头部 底部</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/密码-显示-隐藏/">密码 显示 隐藏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信分享/">微信分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/手机号-一致/">手机号 一致</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/次数最多-去重/">次数最多 去重</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度统计/">百度统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/端口号-冲突/">端口号 冲突</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自适应/">自适应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/解析-合并-压缩/">解析 合并 压缩</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/首字母-大写/">首字母 大写</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/F7-无限滚动加载-菜单/" style="font-size: 10px;">F7 无限滚动加载 菜单</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/QQ浏览器/" style="font-size: 10px;">QQ浏览器</a> <a href="/tags/Render-Section-Page/" style="font-size: 10px;">Render Section Page</a> <a href="/tags/SEO/" style="font-size: 10px;">SEO</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/call-apply/" style="font-size: 10px;">call apply</a> <a href="/tags/canvas/" style="font-size: 20px;">canvas</a> <a href="/tags/clip-裁剪/" style="font-size: 10px;">clip 裁剪</a> <a href="/tags/cookie-登录-用户名显示/" style="font-size: 10px;">cookie 登录 用户名显示</a> <a href="/tags/get-post/" style="font-size: 10px;">get post</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/github-文件推送-线上仓库/" style="font-size: 10px;">github 文件推送 线上仓库</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/hexo-博客/" style="font-size: 10px;">hexo 博客</a> <a href="/tags/hexo-博客-favicon/" style="font-size: 10px;">hexo 博客 favicon</a> <a href="/tags/img-间距/" style="font-size: 10px;">img 间距</a> <a href="/tags/javascript语法特性/" style="font-size: 10px;">javascript语法特性</a> <a href="/tags/jquery-坑/" style="font-size: 10px;">jquery 坑</a> <a href="/tags/js-媒体查询/" style="font-size: 10px;">js 媒体查询</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/less/" style="font-size: 10px;">less</a> <a href="/tags/meta-content/" style="font-size: 10px;">meta content</a> <a href="/tags/react-framework7-历史搜索-热门搜索/" style="font-size: 10px;">react framework7 历史搜索 热门搜索</a> <a href="/tags/react-webpack/" style="font-size: 10px;">react webpack</a> <a href="/tags/swiper-选项卡-hover效果/" style="font-size: 10px;">swiper 选项卡 hover效果</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/url-参数/" style="font-size: 10px;">url 参数</a> <a href="/tags/vue-src/" style="font-size: 10px;">vue src</a> <a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a> <a href="/tags/windows-hexo-博客/" style="font-size: 10px;">windows hexo 博客</a> <a href="/tags/windows-终端/" style="font-size: 10px;">windows 终端</a> <a href="/tags/三角形/" style="font-size: 10px;">三角形</a> <a href="/tags/事件代理-委托/" style="font-size: 10px;">事件代理/委托</a> <a href="/tags/伪元素/" style="font-size: 10px;">伪元素</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/前端-html5/" style="font-size: 10px;">前端 html5</a> <a href="/tags/匿名函数-自执行/" style="font-size: 10px;">匿名函数 自执行</a> <a href="/tags/多球运动/" style="font-size: 10px;">多球运动</a> <a href="/tags/头部-底部/" style="font-size: 10px;">头部 底部</a> <a href="/tags/密码-显示-隐藏/" style="font-size: 10px;">密码 显示 隐藏</a> <a href="/tags/微信分享/" style="font-size: 10px;">微信分享</a> <a href="/tags/手机号-一致/" style="font-size: 10px;">手机号 一致</a> <a href="/tags/次数最多-去重/" style="font-size: 10px;">次数最多 去重</a> <a href="/tags/百度统计/" style="font-size: 10px;">百度统计</a> <a href="/tags/端口号-冲突/" style="font-size: 10px;">端口号 冲突</a> <a href="/tags/自适应/" style="font-size: 10px;">自适应</a> <a href="/tags/解析-合并-压缩/" style="font-size: 10px;">解析 合并 压缩</a> <a href="/tags/首字母-大写/" style="font-size: 10px;">首字母 大写</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
     </div>
   </div>
 
@@ -233,7 +687,19 @@ $(window).resize(function() {
           </li>
         
           <li>
+            <a href="/2018/03/19/扫码付项目探坑和踩坑/">扫码付项目探坑和踩坑</a>
+          </li>
+        
+          <li>
             <a href="/2018/03/01/前端琐碎知识点总结/">前端琐碎知识点总结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/05/overflow-scrolling-touch属性副作用/">-webkit-overflow-scrolling:touch属性副作用--QQ内置浏览器空白处理</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/30/微信分享功能实现/">微信分享（二次）功能实现--显示描述和缩略图</a>
           </li>
         
       </ul>
