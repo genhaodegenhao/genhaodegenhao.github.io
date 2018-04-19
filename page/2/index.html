@@ -1,90 +1,316 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+
+
 
   
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/page/2/"/>
+
+
+
+
+
+  <title>Hexo</title>
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c873936e7d82c193539f81a478323d30";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
   
-    <article id="post-js日期格式化" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/08/18/js日期格式化/" class="article-date">
-  <time datetime="2017-08-18T10:04:55.000Z" itemprop="datePublished">2017-08-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/18/js日期格式化/">js日期格式化</a>
-    </h1>
+    
   
 
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/18/js日期格式化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/18/js日期格式化/" itemprop="url">js日期格式化</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-18T18:04:55+08:00">
+                2017-08-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p>// 对Date的扩展，将 Date 转化为指定格式的String</p>
+      
+
+      
+        
+          
+            <p>// 对Date的扩展，将 Date 转化为指定格式的String</p>
 <p>// 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符，</p>
 <p>// 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字) </p>
 <p>// 例子： </p>
@@ -110,42 +336,125 @@
 <p>var time1 = new Date().Format(“M月d日”);   //8月21日</p>
 <p>var time2 = new Date().Format(“yyyy-MM-dd HH:mm:ss”);  //2017-08-20 18:00:00</p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/18/js日期格式化/" data-id="cjg69e8zb001i0sm0kq4a1zvb" class="article-share-link">Share</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
       
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-jquery选项卡" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/08/18/jquery选项卡/" class="article-date">
-  <time datetime="2017-08-18T10:03:31.000Z" itemprop="datePublished">2017-08-18</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/18/jquery选项卡/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/18/jquery选项卡/">jquery选项卡</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/18/jquery选项卡/" itemprop="url">jquery选项卡</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-18T18:03:31+08:00">
+                2017-08-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p>html：</p>
+      
+
+      
+        
+          
+            <p>html：</p>
 <pre><code>&lt;ul class=&quot;tab&quot;&gt;
        &lt;li&gt;最新&lt;/li&gt;
        &lt;li class=&quot;cur&quot;&gt;热门&lt;/li&gt;
@@ -175,79 +484,245 @@ $(&quot;div&quot;).hide().eq($(this).index()).show();
 <p>eq($(this).index())表示匹配点击的当前元素，</p>
 <p>siblings()表示同级元素，在此表示与li的同级元素。</p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/18/jquery选项卡/" data-id="cjg69e8z2001c0sm0c776bzbv" class="article-share-link">Share</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
       
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-Hexo搭建博客并实现多终端同步管理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/08/10/Hexo搭建博客并实现多终端同步管理/" class="article-date">
-  <time datetime="2017-08-10T09:44:16.000Z" itemprop="datePublished">2017-08-10</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/10/Hexo搭建博客并实现多终端同步管理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/10/Hexo搭建博客并实现多终端同步管理/">Hexo搭建博客并实现多终端同步管理</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/10/Hexo搭建博客并实现多终端同步管理/" itemprop="url">Hexo搭建博客并实现多终端同步管理</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-10T17:44:16+08:00">
+                2017-08-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>发现和git代码上传的类似。</p>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/10/Hexo搭建博客并实现多终端同步管理/" data-id="cjg69e8wi00000sm0882p4lpi" class="article-share-link">Share</a>
       
+
+      
+        
+          
+            <p>发现和git代码上传的类似。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-create-react-app项目添加less配置" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/08/10/create-react-app项目添加less配置/" class="article-date">
-  <time datetime="2017-08-10T09:32:40.000Z" itemprop="datePublished">2017-08-10</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/10/create-react-app项目添加less配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/10/create-react-app项目添加less配置/">create-react-app项目添加less配置</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/10/create-react-app项目添加less配置/" itemprop="url">create-react-app项目添加less配置</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-10T17:32:40+08:00">
+                2017-08-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p>使用create-react-app 创建的项目默认不支持less，以下增加less配置的步骤</p>
+      
+
+      
+        
+          
+            <p>使用create-react-app 创建的项目默认不支持less，以下增加less配置的步骤</p>
 <h4 id="暴露配置文件"><a href="#暴露配置文件" class="headerlink" title="暴露配置文件"></a>暴露配置文件</h4><p>create-react-app生成的项目文，看不到webpack相关的配置文件，需要先暴露出来，使用如下命令即可：</p>
 <pre><code>npm run eject
 </code></pre><p>安装less-loader 和 less</p>
@@ -303,42 +778,125 @@ $(&quot;div&quot;).hide().eq($(this).index()).show();
   ],
 },
 </code></pre>
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/10/create-react-app项目添加less配置/" data-id="cjg69e8y1000n0sm0jema80xc" class="article-share-link">Share</a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
       
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-create-react-app中的webpack打包问题" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/08/08/create-react-app中的webpack打包问题/" class="article-date">
-  <time datetime="2017-08-08T04:00:00.000Z" itemprop="datePublished">2017-08-08</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/08/create-react-app中的webpack打包问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/08/create-react-app中的webpack打包问题/">create-react-app中的webpack项目打包问题</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/08/create-react-app中的webpack打包问题/" itemprop="url">create-react-app中的webpack项目打包问题</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-08T12:00:00+08:00">
+                2017-08-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <h4 id="使用create-react-app创建一个react模板，"><a href="#使用create-react-app创建一个react模板，" class="headerlink" title="使用create-react-app创建一个react模板，"></a>使用create-react-app创建一个react模板，</h4><p>1、在终端中输入:</p>
+      
+
+      
+        
+          
+            <h4 id="使用create-react-app创建一个react模板，"><a href="#使用create-react-app创建一个react模板，" class="headerlink" title="使用create-react-app创建一个react模板，"></a>使用create-react-app创建一个react模板，</h4><p>1、在终端中输入:</p>
 <pre><code>npm install -g create-react-app
 </code></pre><p>2、使用create-react-app创建一个react项目：</p>
 <pre><code>create-ract-app myFirstApp
@@ -364,44 +922,125 @@ envPublicUrl || (publicUrl ? url.parse(publicUrl).pathname : &apos;./&apos;);
 </code></pre><p>2、打包后的css和js文件会多出一个.map的文件；</p>
 <p>解决方法：打开config文件夹下的webpack.config.prod.js文件，找到devtool: ‘source-map’,大约在55行，把此行注释掉即可；</p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/08/create-react-app中的webpack打包问题/" data-id="cjg69e8y0000m0sm0g1jxvye8" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react-webpack/">react webpack</a></li></ul>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-webstorm编辑器设置" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/11/webstorm编辑器设置/" class="article-date">
-  <time datetime="2017-07-11T07:00:00.000Z" itemprop="datePublished">2017-07-11</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/11/webstorm编辑器设置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/11/webstorm编辑器设置/">webstorm编辑器</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/11/webstorm编辑器设置/" itemprop="url">webstorm编辑器</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-11T15:00:00+08:00">
+                2017-07-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <h3 id="webstorm以下简称ws"><a href="#webstorm以下简称ws" class="headerlink" title="webstorm以下简称ws"></a>webstorm以下简称ws</h3><h4 id="一、更改webstorm使用时效；"><a href="#一、更改webstorm使用时效；" class="headerlink" title="一、更改webstorm使用时效；"></a>一、更改webstorm使用时效；</h4><p>下载完ws后，默认应该是英文版的，找到Help（帮助）里的register，如下图所示：</p>
+      
+
+      
+        
+          
+            <h3 id="webstorm以下简称ws"><a href="#webstorm以下简称ws" class="headerlink" title="webstorm以下简称ws"></a>webstorm以下简称ws</h3><h4 id="一、更改webstorm使用时效；"><a href="#一、更改webstorm使用时效；" class="headerlink" title="一、更改webstorm使用时效；"></a>一、更改webstorm使用时效；</h4><p>下载完ws后，默认应该是英文版的，找到Help（帮助）里的register，如下图所示：</p>
 <p><img src="http://wx2.sinaimg.cn/mw1024/005SH7k8gy1fhg0j3vavtj30dh0cf0tf.jpg" alt=""></p>
 <p>找到License server选项，并把图中的链接敲进去，点击Activate，然后重启ws编辑器，就不会出现使用时间的限制了。太赞了~~~</p>
 <p>如果这个方法不行，可以试下这个<a href="http://idea.iteblog.com/key.php；" target="_blank" rel="noopener">http://idea.iteblog.com/key.php；</a></p>
@@ -409,44 +1048,125 @@ envPublicUrl || (publicUrl ? url.parse(publicUrl).pathname : &apos;./&apos;);
 <h4 id="三、ws中安装插件"><a href="#三、ws中安装插件" class="headerlink" title="三、ws中安装插件"></a>三、ws中安装插件</h4><p>通过步骤二想必你的ws编辑器已经是中文版的了，哈哈~~~点击文件中的设置属性，弹出的框中左侧有个Plugins，可搜索自己想要安装的插件。</p>
 <p><span style="color:blue">持续更新中…</span></p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/11/webstorm编辑器设置/" data-id="cjg69e8zp001s0sm014qa5ymx" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webstorm/">webstorm</a></li></ul>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-端口号冲突问题解决" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/11/端口号冲突问题解决/" class="article-date">
-  <time datetime="2017-07-11T06:00:00.000Z" itemprop="datePublished">2017-07-11</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/11/端口号冲突问题解决/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/11/端口号冲突问题解决/">【vue报错】——listen EADDRINUSE :::8080 解决方案</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/11/端口号冲突问题解决/" itemprop="url">【vue报错】——listen EADDRINUSE :::8080 解决方案</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-11T14:00:00+08:00">
+                2017-07-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p>原因：8080端口号被占用。</p>
+      
+
+      
+        
+          
+            <p>原因：8080端口号被占用。</p>
 <p>解决方法：</p>
 <p>打开cmd，输入netstat —ano；</p>
 <p>查看所有端口信息，如图，找到8080端口，以及对应的PID</p>
@@ -457,44 +1177,125 @@ envPublicUrl || (publicUrl ? url.parse(publicUrl).pathname : &apos;./&apos;);
 <p><img src="http://images2015.cnblogs.com/blog/1085489/201702/1085489-20170217132553894-1410496762.png" alt=""></p>
 <p>再输入tskill PID即可。</p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/11/端口号冲突问题解决/" data-id="cjg69e91800340sm0se1tegn9" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/端口号-冲突/">端口号 冲突</a></li></ul>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-匿名函数自执行问题" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/29/匿名函数自执行问题/" class="article-date">
-  <time datetime="2017-06-29T14:24:51.000Z" itemprop="datePublished">2017-06-29</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/29/匿名函数自执行问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/29/匿名函数自执行问题/">匿名函数自执行问题</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/29/匿名函数自执行问题/" itemprop="url">匿名函数自执行问题</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-29T22:24:51+08:00">
+                2017-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p>今天遇到了以下这样一段代码，看到后一脸懵逼，脑中一片空白，不知如何下手，代码如下：</p>
+      
+
+      
+        
+          
+            <p>今天遇到了以下这样一段代码，看到后一脸懵逼，脑中一片空白，不知如何下手，代码如下：</p>
 <pre><code>var test = (function(a){
     this.a = a;
     return function(b){
@@ -515,44 +1316,125 @@ console.log(test(4));
 <p>最后function(a){}自执行函数返回个函数给test变量;即test = function(b){return this.a + b};将test(4)，将参数4带入函数中，得到1 + 4 = 5； </p>
 <p>以上是我自己的理解；如果有其他的理解欢迎共享。</p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/29/匿名函数自执行问题/" data-id="cjg69e90f002g0sm0u9g40d2j" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/匿名函数-自执行/">匿名函数 自执行</a></li></ul>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-事件代理-委托" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/15/事件代理-委托/" class="article-date">
-  <time datetime="2017-06-15T09:06:55.000Z" itemprop="datePublished">2017-06-15</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/15/事件代理-委托/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/15/事件代理-委托/">事件代理/委托</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/15/事件代理-委托/" itemprop="url">事件代理/委托</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-15T17:06:55+08:00">
+                2017-06-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>事件委托就是利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。</p>
+      
+
+      
+        
+          
+            <h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>事件委托就是利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。</p>
 <h4 id="为什么要用事件委托"><a href="#为什么要用事件委托" class="headerlink" title="为什么要用事件委托"></a>为什么要用事件委托</h4><p>一般来说，DOM需要有事件处理程序，我们都会直接给它设事件处理程序就好了，那如果有很多的DOM需要添加事件处理呢？比如有100个li，每个li都有相同的click事件，可能我们会用for循环的方法来遍历所有的li，然后给它们添加事件，这么做会存在什么影响呢？</p>
 <p>在javascript中，添加到页面上的事件处理程序数量将直接关系到页面的整体运行性能，因为需要不断的与DOM节点进行交互，<span style="color:red">访问DOM的次数越多，引起浏览器重绘与重排的次数也就越多，就会延长整个页面的交互就绪时间</span>，这就是为什么性能优惠的主要思想之一就是减少DOM操作的原因；如果用时间委托，就会将所有的操作放到js程序里，与DOM的操作就只需要交互一次，就能大大的减少与DOM的交互次数，提高性能。</p>
 <h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><p>一、子节点实现相同的功能：</p>
@@ -646,44 +1528,125 @@ console.log(test(4));
 </code></pre><p>用事件委托就可以只用一次dom操作就能完成所有的效果；</p>
 <p>我们可以发现，当用事件委托的时候，根本就不需要去遍历元素的子节点，只需要给父级元素添加事件就好了，其他的都是在js里面的执行，这样可以大大的减少dom操作，这才是事件委托的精髓所在。</p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/15/事件代理-委托/" data-id="cjg69e8zu001x0sm03im5lss9" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/事件代理-委托/">事件代理/委托</a></li></ul>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-Vue中img的src属性绑定与static文件夹" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/05/10/Vue中img的src属性绑定与static文件夹/" class="article-date">
-  <time datetime="2017-05-10T10:55:21.000Z" itemprop="datePublished">2017-05-10</time>
-</a>
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/10/Vue中img的src属性绑定与static文件夹/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/10/Vue中img的src属性绑定与static文件夹/">Vue中img的src属性</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/10/Vue中img的src属性绑定与static文件夹/" itemprop="url">Vue中img的src属性</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-10T18:55:21+08:00">
+                2017-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p>不少人在vue的开发中遇到这样一个问题： img的src属性绑定url变量，然而图片加载失败。</p>
+      
+
+      
+        
+          
+            <p>不少人在vue的开发中遇到这样一个问题： img的src属性绑定url变量，然而图片加载失败。</p>
 <p>大部分的情况中，是开发者使用了错误的写法，例如：</p>
 <pre><code>&lt;img src=&quot;{{ imgUrl }}&quot;/&gt;
 </code></pre><p>这样写肯定是不对的，正确的写法应该使用v-bind:</p>
@@ -710,128 +1673,327 @@ console.log(test(4));
 </code></pre><h5 id="另一种方法"><a href="#另一种方法" class="headerlink" title="另一种方法"></a>另一种方法</h5><p>直接引用：</p>
 <pre><code>&lt;img src=&quot;../static/img/logo.png&quot;&gt;
 </code></pre>
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/05/10/Vue中img的src属性绑定与static文件夹/" data-id="cjg69e8xi00090sm0pa6lbz9l" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-src/">vue src</a></li></ul>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+  </section>
 
   
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
 
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/F7-无限滚动加载-菜单/">F7 无限滚动加载 菜单</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QQ浏览器/">QQ浏览器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Render-Section-Page/">Render Section Page</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SEO/">SEO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call-apply/">call apply</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/canvas/">canvas</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/clip-裁剪/">clip 裁剪</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie-登录-用户名显示/">cookie 登录 用户名显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/get-post/">get post</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-文件推送-线上仓库/">github 文件推送 线上仓库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-博客/">hexo 博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-博客-favicon/">hexo 博客 favicon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/img-间距/">img 间距</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript语法特性/">javascript语法特性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery-坑/">jquery 坑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js-媒体查询/">js 媒体查询</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json/">json</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/less/">less</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/meta-content/">meta content</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-framework7-历史搜索-热门搜索/">react framework7 历史搜索 热门搜索</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-webpack/">react webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swiper-选项卡-hover效果/">swiper 选项卡 hover效果</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this/">this</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/url-参数/">url 参数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-src/">vue src</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows-hexo-博客/">windows hexo 博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows-终端/">windows 终端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三角形/">三角形</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/事件代理-委托/">事件代理/委托</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/伪元素/">伪元素</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数/">函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端-html5/">前端 html5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/匿名函数-自执行/">匿名函数 自执行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多球运动/">多球运动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/头部-底部/">头部 底部</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/密码-显示-隐藏/">密码 显示 隐藏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信分享/">微信分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/手机号-一致/">手机号 一致</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/次数最多-去重/">次数最多 去重</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度统计/">百度统计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/端口号-冲突/">端口号 冲突</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自适应/">自适应</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/解析-合并-压缩/">解析 合并 压缩</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/首字母-大写/">首字母 大写</a></li></ul>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
 
-
-  
+  <aside id="sidebar" class="sidebar">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/F7-无限滚动加载-菜单/" style="font-size: 10px;">F7 无限滚动加载 菜单</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/QQ浏览器/" style="font-size: 10px;">QQ浏览器</a> <a href="/tags/Render-Section-Page/" style="font-size: 10px;">Render Section Page</a> <a href="/tags/SEO/" style="font-size: 10px;">SEO</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/call-apply/" style="font-size: 10px;">call apply</a> <a href="/tags/canvas/" style="font-size: 20px;">canvas</a> <a href="/tags/clip-裁剪/" style="font-size: 10px;">clip 裁剪</a> <a href="/tags/cookie-登录-用户名显示/" style="font-size: 10px;">cookie 登录 用户名显示</a> <a href="/tags/get-post/" style="font-size: 10px;">get post</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/github-文件推送-线上仓库/" style="font-size: 10px;">github 文件推送 线上仓库</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/hexo-博客/" style="font-size: 10px;">hexo 博客</a> <a href="/tags/hexo-博客-favicon/" style="font-size: 10px;">hexo 博客 favicon</a> <a href="/tags/img-间距/" style="font-size: 10px;">img 间距</a> <a href="/tags/javascript语法特性/" style="font-size: 10px;">javascript语法特性</a> <a href="/tags/jquery-坑/" style="font-size: 10px;">jquery 坑</a> <a href="/tags/js-媒体查询/" style="font-size: 10px;">js 媒体查询</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/less/" style="font-size: 10px;">less</a> <a href="/tags/meta-content/" style="font-size: 10px;">meta content</a> <a href="/tags/react-framework7-历史搜索-热门搜索/" style="font-size: 10px;">react framework7 历史搜索 热门搜索</a> <a href="/tags/react-webpack/" style="font-size: 10px;">react webpack</a> <a href="/tags/swiper-选项卡-hover效果/" style="font-size: 10px;">swiper 选项卡 hover效果</a> <a href="/tags/this/" style="font-size: 10px;">this</a> <a href="/tags/url-参数/" style="font-size: 10px;">url 参数</a> <a href="/tags/vue-src/" style="font-size: 10px;">vue src</a> <a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a> <a href="/tags/windows-hexo-博客/" style="font-size: 10px;">windows hexo 博客</a> <a href="/tags/windows-终端/" style="font-size: 10px;">windows 终端</a> <a href="/tags/三角形/" style="font-size: 10px;">三角形</a> <a href="/tags/事件代理-委托/" style="font-size: 10px;">事件代理/委托</a> <a href="/tags/伪元素/" style="font-size: 10px;">伪元素</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/前端-html5/" style="font-size: 10px;">前端 html5</a> <a href="/tags/匿名函数-自执行/" style="font-size: 10px;">匿名函数 自执行</a> <a href="/tags/多球运动/" style="font-size: 10px;">多球运动</a> <a href="/tags/头部-底部/" style="font-size: 10px;">头部 底部</a> <a href="/tags/密码-显示-隐藏/" style="font-size: 10px;">密码 显示 隐藏</a> <a href="/tags/微信分享/" style="font-size: 10px;">微信分享</a> <a href="/tags/手机号-一致/" style="font-size: 10px;">手机号 一致</a> <a href="/tags/次数最多-去重/" style="font-size: 10px;">次数最多 去重</a> <a href="/tags/百度统计/" style="font-size: 10px;">百度统计</a> <a href="/tags/端口号-冲突/" style="font-size: 10px;">端口号 冲突</a> <a href="/tags/自适应/" style="font-size: 10px;">自适应</a> <a href="/tags/解析-合并-压缩/" style="font-size: 10px;">解析 合并 压缩</a> <a href="/tags/首字母-大写/" style="font-size: 10px;">首字母 大写</a>
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
     </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
-    </div>
-  </div>
+  </aside>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2018/04/19/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/19/扫码付项目探坑和踩坑/">扫码付项目探坑和踩坑</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/01/前端琐碎知识点总结/">前端琐碎知识点总结</a>
-          </li>
-        
-          <li>
-            <a href="/2017/12/05/overflow-scrolling-touch属性副作用/">-webkit-overflow-scrolling:touch属性副作用--QQ内置浏览器空白处理</a>
-          </li>
-        
-          <li>
-            <a href="/2017/11/30/微信分享功能实现/">微信分享（二次）功能实现--显示描述和缩略图</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
         
       </div>
-      <footer id="footer">
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
   
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
+    
 
   </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>
