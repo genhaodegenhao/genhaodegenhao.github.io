@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="小前端 大学问">
 <meta property="og:description" content="1、安装Git从Git官网上下载，如果电脑安装过Xcode就不用下载了，因为Xcode自带Git。 2、安装node.jshexo是一个基于bode.js的静态博客生成器，要先安装node.js才能保证hexo的正常运行。 下载地址https://nodejs.org/en/，推荐下载v4.4.4LTS稳定版。 安装之后打开终端，输入 node -v 出现node.js版本号，表示安装成功。 3、">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-06-29T16:21:50.030Z">
+<meta property="og:updated_time" content="2018-05-24T10:46:17.618Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo博客的搭建与遇到的问题解答">
 <meta name="twitter:description" content="1、安装Git从Git官网上下载，如果电脑安装过Xcode就不用下载了，因为Xcode自带Git。 2、安装node.jshexo是一个基于bode.js的静态博客生成器，要先安装node.js才能保证hexo的正常运行。 下载地址https://nodejs.org/en/，推荐下载v4.4.4LTS稳定版。 安装之后打开终端，输入 node -v 出现node.js版本号，表示安装成功。 3、">
@@ -343,7 +343,10 @@ npm install （npm安装）
 <pre><code>ssh-keygen
 
 vim ~/.ssh/id_rsa.pub
-</code></pre><p>多按几次回车，生成密钥。</p>
+</code></pre><p>或者：</p>
+<pre><code>ssh-keygen -t rsa -C &quot;your_email@example.com&quot;
+</code></pre><p>其中 <a href="mailto:your_email@example.com" target="_blank" rel="noopener">your_email@example.com</a> 为你在 GitHub 注册时的邮箱</p>
+<p>多按几次回车，生成密钥。</p>
 <p>众所周知，在OS系统中，复制文件内容到剪贴板的命令是：</p>
 <pre><code>pbcopy &lt; ~/.ssh/id_rsa.pub
 </code></pre><p>在Win7或者Win10下这条命令就没用了。可以这样：</p>
@@ -429,8 +432,8 @@ hexo d
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/16/gulp构建工具/" rel="next" title="gulp 构建和工具">
-                <i class="fa fa-chevron-left"></i> gulp 构建和工具
+              <a href="/2016/05/16/SEO优化/" rel="next" title="SEO优化">
+                <i class="fa fa-chevron-left"></i> SEO优化
               </a>
             
           </div>
@@ -439,8 +442,8 @@ hexo d
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/17/gulp文件解析合并与压缩/" rel="prev" title="文件解析合并与压缩">
-                文件解析合并与压缩 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/05/16/gulp构建工具/" rel="prev" title="gulp 构建和工具">
+                gulp 构建和工具 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -522,7 +525,7 @@ hexo d
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
