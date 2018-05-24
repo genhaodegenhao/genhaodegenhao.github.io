@@ -86,10 +86,13 @@
 <meta property="og:site_name" content="小前端 大学问">
 <meta property="og:description" content="一、跳转事件 1、location.href=’http://www.xxx.com/&amp;#39;;    可返回上一页面 2、location.replace(‘http://www.xxx.com/&amp;#39;);    不可返回上一页面 两者的不同之处是前者会在浏览器的历史浏览记录（history对象中）增加一条新的记录，而后者则是相当于用replace中的url代替了现有的页面url，并把hi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-18T06:55:39.494Z">
+<meta property="og:image" content="https://wxt.sinaimg.cn/mw1024/006vSKfZgy1frj53uf1u4j304f01k741.jpg?tags=%5B%5D">
+<meta property="og:image" content="https://wx3.sinaimg.cn/mw1024/006vSKfZgy1frj53ufp2vj304j01xgld.jpg">
+<meta property="og:updated_time" content="2018-05-21T10:38:32.134Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端琐碎知识点总结">
 <meta name="twitter:description" content="一、跳转事件 1、location.href=’http://www.xxx.com/&amp;#39;;    可返回上一页面 2、location.replace(‘http://www.xxx.com/&amp;#39;);    不可返回上一页面 两者的不同之处是前者会在浏览器的历史浏览记录（history对象中）增加一条新的记录，而后者则是相当于用replace中的url代替了现有的页面url，并把hi">
+<meta name="twitter:image" content="https://wxt.sinaimg.cn/mw1024/006vSKfZgy1frj53uf1u4j304f01k741.jpg?tags=%5B%5D">
 
 
 
@@ -364,7 +367,55 @@ $(window).resize(function() {
 });
 </code></pre><p>六、光标颜色控制</p>
 <pre><code>caret-color：red;
-</code></pre>
+</code></pre><p>七、fixed布局，滑动页面时会抖动？</p>
+<pre><code>两种方法解决：
+    1、fixed定位元素上添加 -webkit-transform: translateZ(0);
+
+    2、添加以下css代码：
+        html, body {
+          height: 100%;
+          overflow: auto;
+        }
+</code></pre><p>ps：<span style="color:red">个人建议选择第二种；</span></p>
+<p>八、flex解决在小米自带浏览器下line-height的bug?</p>
+<p>问题：父级设置line-height和height高度相同，子元素在小米自带浏览器上不垂直居中，其他浏览器无此问题；</p>
+<p>如下代码：</p>
+<pre><code>html：
+&lt;div class=&quot;box&gt;根号3学前端&lt;/div&gt;
+
+css：
+.box{
+    width: 200px;
+    height: 100px;
+    line-height: 100px;
+    background: blue;
+    color: #fff;
+}
+</code></pre><p>在小米自带浏览器下结果如下：</p>
+<p><img src="https://wxt.sinaimg.cn/mw1024/006vSKfZgy1frj53uf1u4j304f01k741.jpg?tags=%5B%5D" alt=""></p>
+<p>可以看到文字偏上，而不是垂直居中；</p>
+<p>解决方法：<span style="color:red">&gt;flex：父级设置display：flex和align-items: center;子元素设置align-self:center属性</span>；</p>
+<pre><code>html：
+&lt;div class=&quot;box&gt;&lt;a href=&quot;#&quot;&gt;根号3学前端&lt;/a&gt;&lt;/div&gt;
+
+css:
+.box{
+    width: 200px;
+    height: 100px;
+    line-height: 100px;
+    background: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box a {
+    text-decoration: none;
+    color: #fff;
+    align-self: center;
+}
+</code></pre><p>结果如下所示：</p>
+<p><img src="https://wx3.sinaimg.cn/mw1024/006vSKfZgy1frj53ufp2vj304j01xgld.jpg" alt=""></p>
+
       
     </div>
     
@@ -496,7 +547,7 @@ $(window).resize(function() {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">66</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -509,7 +560,7 @@ $(window).resize(function() {
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>

@@ -242,6 +242,138 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/24/微信小程序大坑：encode后的JSON字符串，JSON-parse解析失败/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="genhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小前端 大学问">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/24/微信小程序大坑：encode后的JSON字符串，JSON-parse解析失败/" itemprop="url">微信小程序大坑：encode后的JSON字符串，JSON.parse解析失败</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-24T16:42:14+08:00">
+                2018-05-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天，在写微信小程序的时候遇到JSON.parse的一个大坑。</p>
+<p>问题简单描述：</p>
+<p>我想在跨页面跳转时传递一个对象以便下个页面可以使用并进行操作；因为url参数是字符串类型，所以要先把obj进行JSON.stringify(obj),下个页面再JSON.parse(obj);思路很简单，但是在JSON.parse(obj)时报以下错误；</p>
+<pre><code>var obj = {
+    &quot;name&quot;: &quot;genhao&quot;,
+    &quot;image&quot;: &quot;http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/114/h/114&quot;
+}
+</code></pre><p><img src="https://wx2.sinaimg.cn/mw1024/006vSKfZgy1frmiyyhgymj30r105cq3o.jpg" alt="">。</p>
+<p>查资料：有的说在小程序中JSON.parse不能使用，考虑到安全问题；呵呵呵~</p>
+<p>翻墙查资料：<span style="color:red">由于对象中包含 url 属性，JSON.parse 方法无法解析包含”？”、”&amp;”之类的字符;</span></p>
+<p>发现obj中确实有”?”之类的字符；把”?”去掉后不报错了，确定是这个原因导致的。</p>
+<p>解决方法：可以将encodeURIComponent(obj)进行编码，把”?”/“&amp;”之类的字符转义，然后在下个页面decodeURIComponent(obj)解码再JSON.parse(obj)就可以成功了。</p>
+<p>路漫漫其修远兮~~~</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -621,7 +753,55 @@ $(window).resize(function() {
 });
 </code></pre><p>六、光标颜色控制</p>
 <pre><code>caret-color：red;
-</code></pre>
+</code></pre><p>七、fixed布局，滑动页面时会抖动？</p>
+<pre><code>两种方法解决：
+    1、fixed定位元素上添加 -webkit-transform: translateZ(0);
+
+    2、添加以下css代码：
+        html, body {
+          height: 100%;
+          overflow: auto;
+        }
+</code></pre><p>ps：<span style="color:red">个人建议选择第二种；</span></p>
+<p>八、flex解决在小米自带浏览器下line-height的bug?</p>
+<p>问题：父级设置line-height和height高度相同，子元素在小米自带浏览器上不垂直居中，其他浏览器无此问题；</p>
+<p>如下代码：</p>
+<pre><code>html：
+&lt;div class=&quot;box&gt;根号3学前端&lt;/div&gt;
+
+css：
+.box{
+    width: 200px;
+    height: 100px;
+    line-height: 100px;
+    background: blue;
+    color: #fff;
+}
+</code></pre><p>在小米自带浏览器下结果如下：</p>
+<p><img src="https://wxt.sinaimg.cn/mw1024/006vSKfZgy1frj53uf1u4j304f01k741.jpg?tags=%5B%5D" alt=""></p>
+<p>可以看到文字偏上，而不是垂直居中；</p>
+<p>解决方法：<span style="color:red">&gt;flex：父级设置display：flex和align-items: center;子元素设置align-self:center属性</span>；</p>
+<pre><code>html：
+&lt;div class=&quot;box&gt;&lt;a href=&quot;#&quot;&gt;根号3学前端&lt;/a&gt;&lt;/div&gt;
+
+css:
+.box{
+    width: 200px;
+    height: 100px;
+    line-height: 100px;
+    background: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box a {
+    text-decoration: none;
+    color: #fff;
+    align-self: center;
+}
+</code></pre><p>结果如下所示：</p>
+<p><img src="https://wx3.sinaimg.cn/mw1024/006vSKfZgy1frj53ufp2vj304j01xgld.jpg" alt=""></p>
+
           
         
       
@@ -1497,131 +1677,6 @@ li{list-style:none}
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/18/元素垂直居中/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="genhao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小前端 大学问">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/18/元素垂直居中/" itemprop="url">元素垂直居中（位置元素本身宽/高度）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-18T18:05:27+08:00">
-                2017-08-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="在不知道元素本身宽度和高度的情况下，可以使用以下方法使该元素相对于父元素垂直居中："><a href="#在不知道元素本身宽度和高度的情况下，可以使用以下方法使该元素相对于父元素垂直居中：" class="headerlink" title="在不知道元素本身宽度和高度的情况下，可以使用以下方法使该元素相对于父元素垂直居中："></a>在不知道元素本身宽度和高度的情况下，可以使用以下方法使该元素相对于父元素垂直居中：</h4><pre><code>.child{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);  /* 使用css3的transform来实现 */    
-}
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1676,7 +1731,7 @@ li{list-style:none}
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">66</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1689,7 +1744,7 @@ li{list-style:none}
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>

@@ -242,6 +242,151 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/10/Vue中img的src属性绑定与static文件夹/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="genhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小前端 大学问">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/10/Vue中img的src属性绑定与static文件夹/" itemprop="url">Vue中img的src属性</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-10T18:55:21+08:00">
+                2017-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>不少人在vue的开发中遇到这样一个问题： img的src属性绑定url变量，然而图片加载失败。</p>
+<p>大部分的情况中，是开发者使用了错误的写法，例如：</p>
+<pre><code>&lt;img src=&quot;{{ imgUrl }}&quot;/&gt;
+</code></pre><p>这样写肯定是不对的，正确的写法应该使用v-bind:</p>
+<pre><code>&lt;img v-bind:src=&quot;imgUrl&quot;/&gt;
+</code></pre><p>不过，有时候即使使用了正确的语法，依旧无法显示图片，因为你的imgUrl使用了本地图片的路径。<br>例如，有下面一个文件结构：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2204269-3bc8a440ae7f38fa.png?imageMogr2/auto-orient/strip%7CimageView2/2" alt=""></p>
+<p>现在，我们要在App.vue里使用位于src/assets/目录下的logo.png图片，于是，我们设：</p>
+<pre><code>imgUrl = &apos;./assets/logo.png&apos;
+</code></pre><p>奇怪的事情出现了，图片加载失败。查看网页源代码，发现一个错误：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2204269-50e42d42bbf3519f.png?imageMogr2/auto-orient/strip%7CimageView2/2" alt=""></p>
+<p>看这个错误代码，我们发现，网页把根域名作为相对路径的根目录了，然而我们文件的路径是相对于项目文件的根目录的，当然就找不到了。</p>
+<p>既然这样，那我们去找build后的dist文件夹。发现文件的结构是这样：</p>
+<p>是不是说只要把url改成./static/img/logo.png就可以了呢？依然是不行的。打开img文件夹我们可以发现，所有的文件名后都被添加上了一个随机字符串，原始的文件名已经无法对应了。</p>
+<p>那么，到底应该怎么加载本地图片呢？回头看vue-cli的文件结构，发现其中有一个叫做static的文件夹，尝试将logo.png放入这个文件夹，然后修改imgUrl：</p>
+<pre><code>imgUrl = &apos;/static/logo.png&apos;
+</code></pre><p>成功读取到了logo.png. 执行npm run build后查看dist文件，发现logo.png原封不动地放在了根目录下。</p>
+<p>原来，之前的目录结构是有问题的，图片一类的静态文件，应该放在这个static文件夹下，这个文件夹下的文件（夹）会按照原本的结构放在网站根目录下。这时我们再去使用/static绝对路径，就可以访问这些静态文件了。</p>
+<h5 id="一种方法"><a href="#一种方法" class="headerlink" title="一种方法"></a>一种方法</h5><pre><code>&lt;img :src=&quot;imgUrl&quot;&gt;
+
+ data() {
+    return {
+      imgUrl: &apos;./static/img/logo.png&apos;
+ };
+</code></pre><h5 id="另一种方法"><a href="#另一种方法" class="headerlink" title="另一种方法"></a>另一种方法</h5><p>直接引用：</p>
+<pre><code>&lt;img src=&quot;../static/img/logo.png&quot;&gt;
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/06/word-break和word-wrap区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1583,130 +1728,6 @@ $.cookie(&apos;nothing&apos;); // =&gt; undefined
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/12/公共头部和底部的引入/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="genhao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小前端 大学问">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/12/12/公共头部和底部的引入/" itemprop="url">公共头部和底部的引入</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-12T18:13:13+08:00">
-                2016-12-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="公共部分引入html"><a href="#公共部分引入html" class="headerlink" title="公共部分引入html"></a>公共部分引入html</h3><p>用到jquey的load方法，将头部和底部的分别写好（供引用），用jquery.load()实现：</p>
-<pre><code>$(document).ready(function(){ 
-    $(&quot;.header&quot;).load(&quot;header.html&quot;);
-    $(&quot;.footer&quot;).load(&quot;footer.html&quot;); 
-}); 
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1761,7 +1782,7 @@ $.cookie(&apos;nothing&apos;); // =&gt; undefined
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">66</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1774,7 +1795,7 @@ $.cookie(&apos;nothing&apos;); // =&gt; undefined
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
