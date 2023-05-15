@@ -4,14 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>Archives | Hexo</title>
+  <title>jquery学习路上遇到的小坑 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="jquery路上的不断填坑1、jQuery中没有innerText、innerHtmldocument.getElementById(“username”) 获得的是dom对象,所有对象都有innerHTML； $(“#username”)获得的是jquery对象,无innerHTML 解决方法： $(&quot;#username&quot;).html(&quot;根号&quot;); or">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jquery学习路上遇到的小坑">
+<meta property="og:url" content="http://example.com/2016/12/16/jquery%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%B8%8D%E6%96%AD%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="jquery路上的不断填坑1、jQuery中没有innerText、innerHtmldocument.getElementById(“username”) 获得的是dom对象,所有对象都有innerHTML； $(“#username”)获得的是jquery对象,无innerHTML 解决方法： $(&quot;#username&quot;).html(&quot;根号&quot;); or">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2016-12-16T05:19:41.000Z">
+<meta property="article:modified_time" content="2016-12-16T08:56:25.164Z">
 <meta property="article:author" content="Genhao">
+<meta property="article:tag" content="jquery 坑">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -69,216 +74,88 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/11/webstorm%E7%BC%96%E8%BE%91%E5%99%A8%E8%AE%BE%E7%BD%AE/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-07-11T07:00:00.000Z" itemprop="datePublished">Jul 11</time>
+        <section id="main"><article id="post-jquery学习的不断总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2016/12/16/jquery%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%B8%8D%E6%96%AD%E6%80%BB%E7%BB%93/" class="article-date">
+  <time class="dt-published" datetime="2016-12-16T05:19:41.000Z" itemprop="datePublished">2016-12-16</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/11/webstorm%E7%BC%96%E8%BE%91%E5%99%A8%E8%AE%BE%E7%BD%AE/">webstorm编辑器</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      jquery学习路上遇到的小坑
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/11/%E7%AB%AF%E5%8F%A3%E5%8F%B7%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-07-11T06:00:00.000Z" itemprop="datePublished">Jul 11</time>
-</a>
+    <div class="e-content article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/11/%E7%AB%AF%E5%8F%A3%E5%8F%B7%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">【vue报错】——listen EADDRINUSE :::8080 解决方案</a>
-    </h1>
-  
+        <h3 id="jquery路上的不断填坑"><a href="#jquery路上的不断填坑" class="headerlink" title="jquery路上的不断填坑"></a>jquery路上的不断填坑</h3><h4 id="1、jQuery中没有innerText、innerHtml"><a href="#1、jQuery中没有innerText、innerHtml" class="headerlink" title="1、jQuery中没有innerText、innerHtml"></a>1、jQuery中没有innerText、innerHtml</h4><p>document.getElementById(“username”) 获得的是dom对象,所有对象都有innerHTML；</p>
+<p>$(“#username”)获得的是jquery对象,无innerHTML</p>
+<p>解决方法：</p>
+<pre><code>$(&quot;#username&quot;).html(&quot;根号&quot;);
+or
+$(&quot;#username&quot;)[0].innerHTML=&quot;根号&quot;;
+</code></pre>
+<h4 id="2、jquery中ajax-data格式？"><a href="#2、jquery中ajax-data格式？" class="headerlink" title="2、jquery中ajax data格式？"></a>2、jquery中ajax data格式？</h4><pre><code>data: &#123;
+    username:username.value,
+    phone:phone.value,
+    msg:msg.value
+&#125;
+</code></pre>
+<h4 id="3、jquery获取img的元素设置src？"><a href="#3、jquery获取img的元素设置src？" class="headerlink" title="3、jquery获取img的元素设置src？"></a>3、jquery获取img的元素设置src？</h4><p> var url &#x3D; “”；</p>
+<p>获取：</p>
+<pre><code>  $(&quot;#imgId&quot;)[0].src = url; 
+</code></pre>
+<p>修改： </p>
+<pre><code>  $(&quot;#imgId&quot;).attr(&#39;src&#39;,path);
+</code></pre>
+<p>原生获取：</p>
+<pre><code>document.getElementById(&quot;imgId&quot;).src = url;
+</code></pre>
+<p><strong>未完待续…</strong></p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/07/img%E5%9C%A8%E5%8A%A0%E8%BD%BD%E5%A4%B1%E8%B4%A5%E5%87%BA%E7%8E%B0%E8%BE%B9%E6%A1%86%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-07-07T03:24:49.000Z" itemprop="datePublished">Jul 7</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/07/img%E5%9C%A8%E5%8A%A0%E8%BD%BD%E5%A4%B1%E8%B4%A5%E5%87%BA%E7%8E%B0%E8%BE%B9%E6%A1%86%E9%97%AE%E9%A2%98/">img在加载失败出现边框问题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/29/%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E8%87%AA%E6%89%A7%E8%A1%8C%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-06-29T14:24:51.000Z" itemprop="datePublished">Jun 29</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2016/12/16/jquery%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%B8%8D%E6%96%AD%E6%80%BB%E7%BB%93/" data-id="clhp1nkbh000hxgvtgac61yvc" data-title="jquery学习路上遇到的小坑" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/29/%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E8%87%AA%E6%89%A7%E8%A1%8C%E9%97%AE%E9%A2%98/">匿名函数自执行问题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/15/%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86-%E5%A7%94%E6%89%98/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-06-15T09:06:55.000Z" itemprop="datePublished">Jun 15</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/15/%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86-%E5%A7%94%E6%89%98/">事件代理/委托</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/05/23/%E5%85%B3%E4%BA%8Ejavascript%E8%AF%AD%E6%B3%95%E7%89%B9%E6%80%A7%E7%9A%84%E5%8F%98%E6%80%81%E9%A2%98/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-05-23T13:18:50.000Z" itemprop="datePublished">May 23</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/23/%E5%85%B3%E4%BA%8Ejavascript%E8%AF%AD%E6%B3%95%E7%89%B9%E6%80%A7%E7%9A%84%E5%8F%98%E6%80%81%E9%A2%98/">关于javascript语法特性的变态题</a>
-    </h1>
-  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery-%E5%9D%91/" rel="tag">jquery 坑</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/17/Framework7%E6%97%A0%E9%99%90%E5%8A%A0%E8%BD%BD%E5%B0%8F%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Framework7无限加载小结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/16/cookie%E5%B0%8F%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">cookie小总结</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/05/14/%E4%BC%AA%E5%85%83%E7%B4%A0/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-05-14T12:43:29.000Z" itemprop="datePublished">May 14</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/14/%E4%BC%AA%E5%85%83%E7%B4%A0/">伪元素before，after，first-line,first-letter,selection</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/05/14/%E6%89%8B%E6%9C%BA%E7%AB%AF%E7%9A%84%E6%A1%86%E6%9E%B6%EF%BC%88%E8%87%AA%E9%80%82%E5%BA%94%EF%BC%89/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-05-14T12:43:29.000Z" itemprop="datePublished">May 14</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/14/%E6%89%8B%E6%9C%BA%E7%AB%AF%E7%9A%84%E6%A1%86%E6%9E%B6%EF%BC%88%E8%87%AA%E9%80%82%E5%BA%94%EF%BC%89/">移动端的自适应方法</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/05/10/Vue%E4%B8%ADimg%E7%9A%84src%E5%B1%9E%E6%80%A7%E7%BB%91%E5%AE%9A%E4%B8%8Estatic%E6%96%87%E4%BB%B6%E5%A4%B9/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-05-10T10:55:21.000Z" itemprop="datePublished">May 10</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/10/Vue%E4%B8%ADimg%E7%9A%84src%E5%B1%9E%E6%80%A7%E7%BB%91%E5%AE%9A%E4%B8%8Estatic%E6%96%87%E4%BB%B6%E5%A4%B9/">Vue中img的src属性</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/04/06/word-break%E5%92%8Cword-wrap%E5%8C%BA%E5%88%AB/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-04-06T10:46:48.000Z" itemprop="datePublished">Apr 6</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/06/word-break%E5%92%8Cword-wrap%E5%8C%BA%E5%88%AB/">word-break和word-wrap区别</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-  </nav>
 
 </section>
         

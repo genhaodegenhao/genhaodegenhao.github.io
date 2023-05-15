@@ -4,14 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>Archives | Hexo</title>
+  <title>Framework7无限加载小结 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="无限加载原理滑动页面到底部，请求后台数据，每次加载的数据量是多少（pageSize），加载的次数（可看做分的页数pageNum），加载到页面上，重复上述过程，页数不断加1，直到后台无数据传递过来。 F7框架中可滚动的区域是page-content，但page-content要在page下，所以要在page-content同级加上infinite-scroll，eg： &lt;div class&#x3D;&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Framework7无限加载小结">
+<meta property="og:url" content="http://example.com/2017/01/17/Framework7%E6%97%A0%E9%99%90%E5%8A%A0%E8%BD%BD%E5%B0%8F%E7%BB%93/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="无限加载原理滑动页面到底部，请求后台数据，每次加载的数据量是多少（pageSize），加载的次数（可看做分的页数pageNum），加载到页面上，重复上述过程，页数不断加1，直到后台无数据传递过来。 F7框架中可滚动的区域是page-content，但page-content要在page下，所以要在page-content同级加上infinite-scroll，eg： &lt;div class&#x3D;&amp;">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2017-01-17T02:53:29.000Z">
+<meta property="article:modified_time" content="2017-02-07T01:50:05.147Z">
 <meta property="article:author" content="Genhao">
+<meta property="article:tag" content="F7 无限滚动加载 菜单">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -69,216 +74,155 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/11/webstorm%E7%BC%96%E8%BE%91%E5%99%A8%E8%AE%BE%E7%BD%AE/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-07-11T07:00:00.000Z" itemprop="datePublished">Jul 11</time>
+        <section id="main"><article id="post-Framework7无限加载小结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2017/01/17/Framework7%E6%97%A0%E9%99%90%E5%8A%A0%E8%BD%BD%E5%B0%8F%E7%BB%93/" class="article-date">
+  <time class="dt-published" datetime="2017-01-17T02:53:29.000Z" itemprop="datePublished">2017-01-17</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/11/webstorm%E7%BC%96%E8%BE%91%E5%99%A8%E8%AE%BE%E7%BD%AE/">webstorm编辑器</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      Framework7无限加载小结
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/11/%E7%AB%AF%E5%8F%A3%E5%8F%B7%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-07-11T06:00:00.000Z" itemprop="datePublished">Jul 11</time>
-</a>
+    <div class="e-content article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/11/%E7%AB%AF%E5%8F%A3%E5%8F%B7%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">【vue报错】——listen EADDRINUSE :::8080 解决方案</a>
-    </h1>
-  
+        <h3 id="无限加载"><a href="#无限加载" class="headerlink" title="无限加载"></a>无限加载</h3><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>滑动页面到底部，请求后台数据，每次加载的数据量是多少（pageSize），加载的次数（可看做分的页数pageNum），加载到页面上，重复上述过程，页数不断加1，直到后台无数据传递过来。</p>
+<p>F7框架中可滚动的区域是<span style="background: #CCC;">page-content</span>，但page-content要在page下，所以要在page-content同级加上<span style="background: #CCC;">infinite-scroll</span>，eg：</p>
+<pre><code>&lt;div class=&quot;page&quot;&gt;
+    &lt;div class=&quot;page-content infinite-scroll&quot; data-distance=&quot;100&quot;&gt;
+    ... 
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>data-distance属性用来配置页面滚动到离底部多远时触发无限滚动事件，默认是50 (px)</p>
+<h3 id="菜单1，2，3"><a href="#菜单1，2，3" class="headerlink" title="菜单1，2，3"></a>菜单1，2，3</h3><h6 id="菜单2或者3无限滚动，直到数据加载完成，菜单之间互不影响"><a href="#菜单2或者3无限滚动，直到数据加载完成，菜单之间互不影响" class="headerlink" title="菜单2或者3无限滚动，直到数据加载完成，菜单之间互不影响"></a>菜单2或者3无限滚动，直到数据加载完成，菜单之间互不影响</h6><p>点击相应菜单按钮，绑定滚动事件，其他菜单解除这个事件，</p>
+<pre><code>var itemIndexs = 0;
+$(&#39;.tab .item&#39;).on(&#39;click&#39;,function()&#123;
+    var $this = $(this);
+    itemIndexs = $this.index();
+    console.log(itemIndexs)  //0，1，2
+    //三个菜单按钮
+    switch (itemIndexs)&#123;
+        case 0:
+            $$(&#39;.infinite-scroll&#39;).off(&#39;infinite&#39;,infinitescroll);
+            break;
+        case 1:
+            $$(&#39;.infinite-scroll&#39;).on(&#39;infinite&#39;,infinitescroll);
+            break;
+        case 2:
+            $$(&#39;.infinite-scroll&#39;).off(&#39;infinite&#39;,infinitescroll);
+            break;
+        default:
+            break;
+    &#125;
+&#125;);
+</code></pre>
+<p>事件封装在函数里，上述的infinitescroll可看做以下的clickHandler：</p>
+<pre><code>function clickHandler()&#123;
+    console.log(&#39;clicked&#39;);
+&#125;
+// Add event listener
+$$(document).on(&#39;click&#39;, &#39;a&#39;, clickHandler);
+// Remove event listener
+$$(document).off(&#39;click&#39;, &#39;a&#39;, clickHandler);
+</code></pre>
+<p>HTML：</p>
+<pre><code>&lt;div class=&quot;tab&quot;&gt;
+       &lt;a href=&quot;javascript:;&quot; class=&quot;item active&quot;&gt;菜单一&lt;/a&gt;
+    &lt;a href=&quot;javascript:;&quot; class=&quot;item&quot;&gt;菜单二&lt;/a&gt;
+    &lt;a href=&quot;javascript:;&quot; class=&quot;item&quot;&gt;菜单三&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;content&quot;&gt;
+    &lt;div class=&quot;lists&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;lists&quot; id=&quot;TargetArea&quot;&gt;
+        &lt;div class=&quot;infinite-scroll-preloader&quot;&gt;
+            &lt;div class=&quot;preloader&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;lists&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>JS:</p>
+<pre><code> function infinitescroll()&#123;
+    if (loading) return;
+    loading = true;
+    pageNum++;
+    UpdateAllGoodsList(TargetArea,inum);
+&#125;;
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/07/img%E5%9C%A8%E5%8A%A0%E8%BD%BD%E5%A4%B1%E8%B4%A5%E5%87%BA%E7%8E%B0%E8%BE%B9%E6%A1%86%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-07-07T03:24:49.000Z" itemprop="datePublished">Jul 7</time>
-</a>
+function Update(TargetArea,pageNum,pageSize) &#123;
+    var param = &#123;
+        &quot;pageNo&quot;: pageNum,
+        &quot;pageSize&quot;: pageSize
+    &#125;;
+    var url = &quot;***&quot;;
+    $.ajax(&#123;
+        type: &quot;***&quot;,
+        url: url,
+        data: param,
+        dataType: &quot;json&quot;,
+        success: function (dataObj) &#123;
+            loading = false;
+            console.log(dataObj);   
+         &#125;,
+        error: function (xhr, ajaxOptions, thrownError) &#123;  //在offline或者数据传输失败时的错误提示
+            if(pageNum!=1) pageNum--;	//页数要减1，在有网络的情况下再重新加载这个页面一次，以防这个页面的数据不显示
+            setTimeout(function()&#123;
+                TargetArea.remove(&quot;.errormessage&quot;);
+                TargetArea.append(&quot;&lt;div class=&#39;col-100 errormessage&#39; style=&#39;text-align:center;&#39;&gt;&lt;h3&gt;加载失败&lt;/h3&gt;&lt;/div&gt;&quot;);
+                $(&quot;.infinite-scroll-preloader&quot;).hide();
+                loading = false;
+            &#125;,1000);
+        &#125;
+    &#125;);
+</code></pre>
+<p><span style="color: red;">PS:先了解原理，再去尝试写demo，上面代码仅提供思路。</span></p>
+
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/07/img%E5%9C%A8%E5%8A%A0%E8%BD%BD%E5%A4%B1%E8%B4%A5%E5%87%BA%E7%8E%B0%E8%BE%B9%E6%A1%86%E9%97%AE%E9%A2%98/">img在加载失败出现边框问题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/29/%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E8%87%AA%E6%89%A7%E8%A1%8C%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-06-29T14:24:51.000Z" itemprop="datePublished">Jun 29</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2017/01/17/Framework7%E6%97%A0%E9%99%90%E5%8A%A0%E8%BD%BD%E5%B0%8F%E7%BB%93/" data-id="clhp1nkb40003xgvtbmc4emvy" data-title="Framework7无限加载小结" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/29/%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E8%87%AA%E6%89%A7%E8%A1%8C%E9%97%AE%E9%A2%98/">匿名函数自执行问题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/15/%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86-%E5%A7%94%E6%89%98/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-06-15T09:06:55.000Z" itemprop="datePublished">Jun 15</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/15/%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86-%E5%A7%94%E6%89%98/">事件代理/委托</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/05/23/%E5%85%B3%E4%BA%8Ejavascript%E8%AF%AD%E6%B3%95%E7%89%B9%E6%80%A7%E7%9A%84%E5%8F%98%E6%80%81%E9%A2%98/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-05-23T13:18:50.000Z" itemprop="datePublished">May 23</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/23/%E5%85%B3%E4%BA%8Ejavascript%E8%AF%AD%E6%B3%95%E7%89%B9%E6%80%A7%E7%9A%84%E5%8F%98%E6%80%81%E9%A2%98/">关于javascript语法特性的变态题</a>
-    </h1>
-  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/F7-%E6%97%A0%E9%99%90%E6%BB%9A%E5%8A%A8%E5%8A%A0%E8%BD%BD-%E8%8F%9C%E5%8D%95/" rel="tag">F7 无限滚动加载 菜单</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/02/07/%E5%B8%B8%E8%A7%81HTTP%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81%E5%A4%A7%E5%85%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          常见HTTP错误代码大全
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/16/jquery%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%B8%8D%E6%96%AD%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">jquery学习路上遇到的小坑</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/05/14/%E4%BC%AA%E5%85%83%E7%B4%A0/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-05-14T12:43:29.000Z" itemprop="datePublished">May 14</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/14/%E4%BC%AA%E5%85%83%E7%B4%A0/">伪元素before，after，first-line,first-letter,selection</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/05/14/%E6%89%8B%E6%9C%BA%E7%AB%AF%E7%9A%84%E6%A1%86%E6%9E%B6%EF%BC%88%E8%87%AA%E9%80%82%E5%BA%94%EF%BC%89/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-05-14T12:43:29.000Z" itemprop="datePublished">May 14</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/14/%E6%89%8B%E6%9C%BA%E7%AB%AF%E7%9A%84%E6%A1%86%E6%9E%B6%EF%BC%88%E8%87%AA%E9%80%82%E5%BA%94%EF%BC%89/">移动端的自适应方法</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/05/10/Vue%E4%B8%ADimg%E7%9A%84src%E5%B1%9E%E6%80%A7%E7%BB%91%E5%AE%9A%E4%B8%8Estatic%E6%96%87%E4%BB%B6%E5%A4%B9/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-05-10T10:55:21.000Z" itemprop="datePublished">May 10</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/10/Vue%E4%B8%ADimg%E7%9A%84src%E5%B1%9E%E6%80%A7%E7%BB%91%E5%AE%9A%E4%B8%8Estatic%E6%96%87%E4%BB%B6%E5%A4%B9/">Vue中img的src属性</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/04/06/word-break%E5%92%8Cword-wrap%E5%8C%BA%E5%88%AB/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-04-06T10:46:48.000Z" itemprop="datePublished">Apr 6</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/06/word-break%E5%92%8Cword-wrap%E5%8C%BA%E5%88%AB/">word-break和word-wrap区别</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-  </nav>
 
 </section>
         

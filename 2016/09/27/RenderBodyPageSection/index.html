@@ -4,14 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>Archives | Hexo</title>
+  <title>新的layout布局 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="要点：A.Layout属性:等同于原来的MasterPageFile属性。 B.@RenderBody()方法:直接渲染整个View到占位符处,而不需要原来所使用的&lt;asp:Content &#x2F;&gt;。 C.@RenderPage()方法:渲染指定的页面到占位符处。 D.@RenderSection方法:声明一个占位符,和原来的&lt;asp:ContentPlaceHolder">
+<meta property="og:type" content="article">
+<meta property="og:title" content="新的layout布局">
+<meta property="og:url" content="http://example.com/2016/09/27/RenderBodyPageSection/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="要点：A.Layout属性:等同于原来的MasterPageFile属性。 B.@RenderBody()方法:直接渲染整个View到占位符处,而不需要原来所使用的&lt;asp:Content &#x2F;&gt;。 C.@RenderPage()方法:渲染指定的页面到占位符处。 D.@RenderSection方法:声明一个占位符,和原来的&lt;asp:ContentPlaceHolder">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2016-09-27T06:30:18.000Z">
+<meta property="article:modified_time" content="2016-09-27T06:40:33.085Z">
 <meta property="article:author" content="Genhao">
+<meta property="article:tag" content="Render Section Page">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -69,216 +74,219 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/11/webstorm%E7%BC%96%E8%BE%91%E5%99%A8%E8%AE%BE%E7%BD%AE/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-07-11T07:00:00.000Z" itemprop="datePublished">Jul 11</time>
+        <section id="main"><article id="post-RenderBodyPageSection" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2016/09/27/RenderBodyPageSection/" class="article-date">
+  <time class="dt-published" datetime="2016-09-27T06:30:18.000Z" itemprop="datePublished">2016-09-27</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/11/webstorm%E7%BC%96%E8%BE%91%E5%99%A8%E8%AE%BE%E7%BD%AE/">webstorm编辑器</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      新的layout布局
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/11/%E7%AB%AF%E5%8F%A3%E5%8F%B7%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-07-11T06:00:00.000Z" itemprop="datePublished">Jul 11</time>
-</a>
+    <div class="e-content article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/11/%E7%AB%AF%E5%8F%A3%E5%8F%B7%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">【vue报错】——listen EADDRINUSE :::8080 解决方案</a>
-    </h1>
-  
+        <h3 id="要点："><a href="#要点：" class="headerlink" title="要点："></a>要点：</h3><p>A.Layout属性:等同于原来的MasterPageFile属性。</p>
+<p>B.@RenderBody()方法:直接渲染整个View到占位符处,而不需要原来所使用的&lt;asp:Content &#x2F;&gt;。</p>
+<p>C.@RenderPage()方法:渲染指定的页面到占位符处。</p>
+<p>D.@RenderSection方法:声明一个占位符,和原来的&lt;asp:ContentPlaceHolder &#x2F;&gt;功能类似。</p>
+<p>E.@section标记:对@RenderSection方法声明的占位符进行实现,和原来的&lt;asp:Content &#x2F;&gt;功能类似。</p>
+<h3 id="1-RenderBody-方法的使用"><a href="#1-RenderBody-方法的使用" class="headerlink" title="1.@RenderBody()方法的使用"></a>1.@RenderBody()方法的使用</h3><p>首先在~&#x2F;Views&#x2F;Shared&#x2F;下创建一个名为_MyLayout.cshtml的LayoutPage文件,并将默认的内容替换为如下:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;@ViewBag.Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;
+        开始渲染Body&lt;br /&gt;
+        @RenderBody()
+        渲染Body结束&lt;br /&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>然后打开在~&#x2F;Views&#x2F;Home&#x2F;Index.cshtml文件并替换为如下的内容:</p>
+<pre><code>@&#123;
+    ViewBag.Title = &quot;首页&quot;;
+&#125;
+&lt;div&gt;
+    	这里就是渲染Body啦。
+&lt;/div&gt;
+</code></pre>
+<p>最后别忘记把<del>&#x2F;Views&#x2F;_ViewStart.cshtml中的Layout属性改为:<br>Layout &#x3D; “</del>&#x2F;Views&#x2F;Shared&#x2F;_MyLayout.cshtml”;</p>
+<p>浏览器输出：</p>
+<p>开始渲染Body</p>
+<p>这里就是渲染Body啦。</p>
+<p>渲染Body结束</p>
+<p style="color:gray;">在此,你或许会有疑问了.在_Layout中定义的RenderBody()是Render那个页啊?
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/07/img%E5%9C%A8%E5%8A%A0%E8%BD%BD%E5%A4%B1%E8%B4%A5%E5%87%BA%E7%8E%B0%E8%BE%B9%E6%A1%86%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-07-07T03:24:49.000Z" itemprop="datePublished">Jul 7</time>
-</a>
+<p>答:其实最后Render页的归属就是Render你所访问的那个页,比如你访问&#x2F;Home&#x2F;Index.那么Render就是Home控制器下的Index.cshtml这个文件, 如果访问的是&#x2F;Ohter&#x2F;SomePage时,那么Render的是Ohter控制器下的SomePage这个.cshtml!</p></p>
+<h3 id="2-RenderPage-方法的使用"><a href="#2-RenderPage-方法的使用" class="headerlink" title="2.@RenderPage()方法的使用"></a>2.@RenderPage()方法的使用</h3><p>在~&#x2F;Views&#x2F;Home&#x2F;文件夹下新建立一个ViewPage1.cshtml文件,将内容改为如下:</p>
+<pre><code>&lt;div&gt;
+        这里是~/Views/Home/ViewPage1.cshtml
+&lt;/div&gt;
+</code></pre>
+<p>并在原来的_MyLayout.cshtml文件中增加几行代码变成下面的这个样子:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;@ViewBag.Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;
+        开始渲染Body&lt;br /&gt;
+        @RenderBody()
+        渲染Body结束&lt;br /&gt;
+        &lt;br /&gt;
+        开始渲染其他页1&lt;br /&gt;
+        @RenderPage(&quot;~/Views/Home/ViewPage1.cshtml&quot;)
+        渲染其他页结束1&lt;br /&gt;
+        开始渲染其他页2&lt;br /&gt;
+        @RenderPage(&quot;~/Views/Home/ViewPage1.cshtml&quot;)
+        渲染其他页结束2&lt;br /&gt;
+        开始渲染其他页3&lt;br /&gt;
+        @RenderPage(&quot;~/Views/Home/ViewPage1.cshtml&quot;)
+        渲染其他页结束3&lt;br /&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>在这里记住:@RenderBody()只能在_Layout.cshtml中使用一次,而@RenderPage()则可以使用多次!另外@RenderPage()是直接定位View页面，不会运行对应的Action方法。</p>
+<h3 id="3-RenderSection方法和-section标记"><a href="#3-RenderSection方法和-section标记" class="headerlink" title="3.@RenderSection方法和@section标记"></a>3.@RenderSection方法和@section标记</h3><p>@RenderSection()方法等价于&lt;asp:ContentPlaceHolder &#x2F;&gt;,用途为在Layout中声明一个占位符.<br>在原来的_MyLayout.cshtml文件中更改内容为如下:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;@ViewBag.Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;
+        开始渲染Body&lt;br /&gt;
+        @RenderBody()
+        渲染Body结束&lt;br /&gt;
+        &lt;br /&gt;
+        开始渲染其他页1&lt;br /&gt;
+        @RenderPage(&quot;~/Views/Home/ViewPage1.cshtml&quot;)
+        渲染其他页结束1&lt;br /&gt;
+        开始渲染其他页2&lt;br /&gt;
+        @RenderPage(&quot;~/Views/Home/ViewPage1.cshtml&quot;)
+        渲染其他页结束2&lt;br /&gt;
+        开始渲染其他页3&lt;br /&gt;
+        @RenderPage(&quot;~/Views/Home/ViewPage1.cshtml&quot;)
+        渲染其他页结束3&lt;br /&gt;
+        &lt;br /&gt;
+        HOHO,开始学习Section了&lt;br /&gt;
+        开始渲染Section&lt;br /&gt;
+        声明方式1(推荐):SectionA:&lt;br /&gt;
+        @RenderSection(&quot;SectionA&quot;, false)
+        -------&lt;br /&gt;
+        
+        声明方式2:SectionB:&lt;br /&gt;
+        @&#123;
+            if (IsSectionDefined(&quot;SectionB&quot;))
+            &#123;
+                @RenderSection(&quot;SectionB&quot;)
+            &#125;
+        &#125;
+        -------&lt;br /&gt;
+        渲染Sction结束&lt;br /&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>在~&#x2F;Views&#x2F;Home&#x2F;Index.cshtml中更改为如下内容:</p>
+<pre><code>@&#123;
+    ViewBag.Title = &quot;首页&quot;;
+&#125;
+
+@section SectionA&#123;
+    &lt;div&gt;这里是SectionA:也不需要写神马runat=&quot;server&quot;啊,有木有&lt;/div&gt;
+&#125;
+
+@section SectionB&#123;
+    &lt;div&gt;这里是SectionB:也不需要写神马&amp;lt;asp:Content /&amp;gt啊,有木有&lt;/div&gt;
+&#125;
+
+&lt;div&gt;
+    这里就是渲染Body啦.~~不需要写神马&amp;lt;asp:Content /&amp;gt;,其实因为RenderBody()不在有歧义.
+&lt;/div&gt;
+</code></pre>
+<p>最后显示结果：<br>开始渲染Body</p>
+<p>这里就是渲染Body啦.</p>
+<p>渲染Body结束</p>
+<p>开始渲染其他页1</p>
+<p>这里是~&#x2F;Views&#x2F;Home&#x2F;ViewPage1.cshtml</p>
+<p>str1</p>
+<p>str2<br>渲染其他页结束</p>
+<p>开始渲染其他页2</p>
+<p>这里是~&#x2F;Views&#x2F;Home&#x2F;ViewPage1.cshtml</p>
+<p>str1</p>
+<p>str2</p>
+<p>渲染其他页结束</p>
+<p>开始渲染其他页3</p>
+<p>这里是~&#x2F;Views&#x2F;Home&#x2F;ViewPage1.cshtml</p>
+<p>str1</p>
+<p>str2</p>
+<p>渲染其他页结束</p>
+<p>HOHO,开始学习Section了</p>
+<p>开始渲染Section</p>
+<p>声明方式1(推荐):SectionA:</p>
+<p>这里是SectionA</p>
+<hr>
+<p>声明方式2:SectionB:</p>
+<p>这里是SectionB</p>
+<hr>
+<p>渲染Sction结束</p>
+<p>问:为什么为什么要推荐方式1呢?</p>
+<p>答:因为RenderSection()方法有2个重载.</p>
+<p>如果使用第一个只接受一个string类型参数的重载的话.~如果你在具体的View中没有利用@section来定义实现的话,运行会报错.所以需要配合另外一个方法IsSectionDefined()来使用,才能防止报错.</p>
+<p>而使用第2个重载就可以利用第二个bool类型的参数指明该Section是否为必须的.所以可以在使用该RenderSection方法的时候直接利用第二个重载,再把bool参数值设为false。</p>
+
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/07/img%E5%9C%A8%E5%8A%A0%E8%BD%BD%E5%A4%B1%E8%B4%A5%E5%87%BA%E7%8E%B0%E8%BE%B9%E6%A1%86%E9%97%AE%E9%A2%98/">img在加载失败出现边框问题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/29/%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E8%87%AA%E6%89%A7%E8%A1%8C%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-06-29T14:24:51.000Z" itemprop="datePublished">Jun 29</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2016/09/27/RenderBodyPageSection/" data-id="clhp1nkb60004xgvtd8p844yi" data-title="新的layout布局" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/29/%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E8%87%AA%E6%89%A7%E8%A1%8C%E9%97%AE%E9%A2%98/">匿名函数自执行问题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/15/%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86-%E5%A7%94%E6%89%98/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-06-15T09:06:55.000Z" itemprop="datePublished">Jun 15</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/15/%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86-%E5%A7%94%E6%89%98/">事件代理/委托</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/05/23/%E5%85%B3%E4%BA%8Ejavascript%E8%AF%AD%E6%B3%95%E7%89%B9%E6%80%A7%E7%9A%84%E5%8F%98%E6%80%81%E9%A2%98/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-05-23T13:18:50.000Z" itemprop="datePublished">May 23</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/23/%E5%85%B3%E4%BA%8Ejavascript%E8%AF%AD%E6%B3%95%E7%89%B9%E6%80%A7%E7%9A%84%E5%8F%98%E6%80%81%E9%A2%98/">关于javascript语法特性的变态题</a>
-    </h1>
-  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Render-Section-Page/" rel="tag">Render Section Page</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/09/28/%E7%AE%80%E5%8D%95%E4%B8%89%E8%A7%92%E5%BD%A2%E7%BB%98%E5%88%B6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          div+css简单三角形绘制
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/09/26/meta%E6%A0%87%E7%AD%BE%E9%87%8C%E7%9A%84content%E5%B1%9E%E6%80%A7/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">meta标签里的content属性</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/05/14/%E4%BC%AA%E5%85%83%E7%B4%A0/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-05-14T12:43:29.000Z" itemprop="datePublished">May 14</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/14/%E4%BC%AA%E5%85%83%E7%B4%A0/">伪元素before，after，first-line,first-letter,selection</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/05/14/%E6%89%8B%E6%9C%BA%E7%AB%AF%E7%9A%84%E6%A1%86%E6%9E%B6%EF%BC%88%E8%87%AA%E9%80%82%E5%BA%94%EF%BC%89/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-05-14T12:43:29.000Z" itemprop="datePublished">May 14</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/14/%E6%89%8B%E6%9C%BA%E7%AB%AF%E7%9A%84%E6%A1%86%E6%9E%B6%EF%BC%88%E8%87%AA%E9%80%82%E5%BA%94%EF%BC%89/">移动端的自适应方法</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/05/10/Vue%E4%B8%ADimg%E7%9A%84src%E5%B1%9E%E6%80%A7%E7%BB%91%E5%AE%9A%E4%B8%8Estatic%E6%96%87%E4%BB%B6%E5%A4%B9/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-05-10T10:55:21.000Z" itemprop="datePublished">May 10</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/10/Vue%E4%B8%ADimg%E7%9A%84src%E5%B1%9E%E6%80%A7%E7%BB%91%E5%AE%9A%E4%B8%8Estatic%E6%96%87%E4%BB%B6%E5%A4%B9/">Vue中img的src属性</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/04/06/word-break%E5%92%8Cword-wrap%E5%8C%BA%E5%88%AB/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-04-06T10:46:48.000Z" itemprop="datePublished">Apr 6</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/06/word-break%E5%92%8Cword-wrap%E5%8C%BA%E5%88%AB/">word-break和word-wrap区别</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-  </nav>
 
 </section>
         

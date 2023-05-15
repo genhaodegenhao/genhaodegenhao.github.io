@@ -4,15 +4,23 @@
   <meta charset="utf-8">
   
   
-  <title>Archives | Hexo</title>
+  <title>Vue中img的src属性 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="不少人在vue的开发中遇到这样一个问题： img的src属性绑定url变量，然而图片加载失败。 大部分的情况中，是开发者使用了错误的写法，例如： &lt;img src&#x3D;&quot;&amp;#123;&amp;#123; imgUrl &amp;#125;&amp;#125;&quot;&#x2F;&gt;  这样写肯定是不对的，正确的写法应该使用v-bind: &lt;img v-bind:src&#x3D;&quot;imgUrl&quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue中img的src属性">
+<meta property="og:url" content="http://example.com/2017/05/10/Vue%E4%B8%ADimg%E7%9A%84src%E5%B1%9E%E6%80%A7%E7%BB%91%E5%AE%9A%E4%B8%8Estatic%E6%96%87%E4%BB%B6%E5%A4%B9/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="不少人在vue的开发中遇到这样一个问题： img的src属性绑定url变量，然而图片加载失败。 大部分的情况中，是开发者使用了错误的写法，例如： &lt;img src&#x3D;&quot;&amp;#123;&amp;#123; imgUrl &amp;#125;&amp;#125;&quot;&#x2F;&gt;  这样写肯定是不对的，正确的写法应该使用v-bind: &lt;img v-bind:src&#x3D;&quot;imgUrl&quot;">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2204269-3bc8a440ae7f38fa.png?imageMogr2/auto-orient/strip%7CimageView2/2">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2204269-50e42d42bbf3519f.png?imageMogr2/auto-orient/strip%7CimageView2/2">
+<meta property="article:published_time" content="2017-05-10T10:55:21.000Z">
+<meta property="article:modified_time" content="2017-05-10T11:04:03.745Z">
 <meta property="article:author" content="Genhao">
+<meta property="article:tag" content="vue src">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2204269-3bc8a440ae7f38fa.png?imageMogr2/auto-orient/strip%7CimageView2/2">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -69,216 +77,96 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/11/webstorm%E7%BC%96%E8%BE%91%E5%99%A8%E8%AE%BE%E7%BD%AE/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-07-11T07:00:00.000Z" itemprop="datePublished">Jul 11</time>
+        <section id="main"><article id="post-Vue中img的src属性绑定与static文件夹" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2017/05/10/Vue%E4%B8%ADimg%E7%9A%84src%E5%B1%9E%E6%80%A7%E7%BB%91%E5%AE%9A%E4%B8%8Estatic%E6%96%87%E4%BB%B6%E5%A4%B9/" class="article-date">
+  <time class="dt-published" datetime="2017-05-10T10:55:21.000Z" itemprop="datePublished">2017-05-10</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/11/webstorm%E7%BC%96%E8%BE%91%E5%99%A8%E8%AE%BE%E7%BD%AE/">webstorm编辑器</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      Vue中img的src属性
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/11/%E7%AB%AF%E5%8F%A3%E5%8F%B7%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-07-11T06:00:00.000Z" itemprop="datePublished">Jul 11</time>
-</a>
+    <div class="e-content article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/11/%E7%AB%AF%E5%8F%A3%E5%8F%B7%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">【vue报错】——listen EADDRINUSE :::8080 解决方案</a>
-    </h1>
-  
+        <p>不少人在vue的开发中遇到这样一个问题： img的src属性绑定url变量，然而图片加载失败。</p>
+<p>大部分的情况中，是开发者使用了错误的写法，例如：</p>
+<pre><code>&lt;img src=&quot;&#123;&#123; imgUrl &#125;&#125;&quot;/&gt;
+</code></pre>
+<p>这样写肯定是不对的，正确的写法应该使用v-bind:</p>
+<pre><code>&lt;img v-bind:src=&quot;imgUrl&quot;/&gt;
+</code></pre>
+<p>不过，有时候即使使用了正确的语法，依旧无法显示图片，因为你的imgUrl使用了本地图片的路径。<br>例如，有下面一个文件结构：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2204269-3bc8a440ae7f38fa.png?imageMogr2/auto-orient/strip%7CimageView2/2"></p>
+<p>现在，我们要在App.vue里使用位于src&#x2F;assets&#x2F;目录下的logo.png图片，于是，我们设：</p>
+<pre><code>imgUrl = &#39;./assets/logo.png&#39;
+</code></pre>
+<p>奇怪的事情出现了，图片加载失败。查看网页源代码，发现一个错误：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2204269-50e42d42bbf3519f.png?imageMogr2/auto-orient/strip%7CimageView2/2"></p>
+<p>看这个错误代码，我们发现，网页把根域名作为相对路径的根目录了，然而我们文件的路径是相对于项目文件的根目录的，当然就找不到了。</p>
+<p>既然这样，那我们去找build后的dist文件夹。发现文件的结构是这样：</p>
+<p>是不是说只要把url改成.&#x2F;static&#x2F;img&#x2F;logo.png就可以了呢？依然是不行的。打开img文件夹我们可以发现，所有的文件名后都被添加上了一个随机字符串，原始的文件名已经无法对应了。</p>
+<p>那么，到底应该怎么加载本地图片呢？回头看vue-cli的文件结构，发现其中有一个叫做static的文件夹，尝试将logo.png放入这个文件夹，然后修改imgUrl：</p>
+<pre><code>imgUrl = &#39;/static/logo.png&#39;
+</code></pre>
+<p>成功读取到了logo.png. 执行npm run build后查看dist文件，发现logo.png原封不动地放在了根目录下。</p>
+<p>原来，之前的目录结构是有问题的，图片一类的静态文件，应该放在这个static文件夹下，这个文件夹下的文件（夹）会按照原本的结构放在网站根目录下。这时我们再去使用&#x2F;static绝对路径，就可以访问这些静态文件了。</p>
+<h5 id="一种方法"><a href="#一种方法" class="headerlink" title="一种方法"></a>一种方法</h5><pre><code>&lt;img :src=&quot;imgUrl&quot;&gt;
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/07/07/img%E5%9C%A8%E5%8A%A0%E8%BD%BD%E5%A4%B1%E8%B4%A5%E5%87%BA%E7%8E%B0%E8%BE%B9%E6%A1%86%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-07-07T03:24:49.000Z" itemprop="datePublished">Jul 7</time>
-</a>
+ data() &#123;
+    return &#123;
+      imgUrl: &#39;./static/img/logo.png&#39;
+ &#125;;
+</code></pre>
+<h5 id="另一种方法"><a href="#另一种方法" class="headerlink" title="另一种方法"></a>另一种方法</h5><p>直接引用：</p>
+<pre><code>&lt;img src=&quot;../static/img/logo.png&quot;&gt;
+</code></pre>
+
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/07/img%E5%9C%A8%E5%8A%A0%E8%BD%BD%E5%A4%B1%E8%B4%A5%E5%87%BA%E7%8E%B0%E8%BE%B9%E6%A1%86%E9%97%AE%E9%A2%98/">img在加载失败出现边框问题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/29/%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E8%87%AA%E6%89%A7%E8%A1%8C%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-06-29T14:24:51.000Z" itemprop="datePublished">Jun 29</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2017/05/10/Vue%E4%B8%ADimg%E7%9A%84src%E5%B1%9E%E6%80%A7%E7%BB%91%E5%AE%9A%E4%B8%8Estatic%E6%96%87%E4%BB%B6%E5%A4%B9/" data-id="clhp1nkb80005xgvt3ic1h86m" data-title="Vue中img的src属性" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/29/%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E8%87%AA%E6%89%A7%E8%A1%8C%E9%97%AE%E9%A2%98/">匿名函数自执行问题</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/15/%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86-%E5%A7%94%E6%89%98/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-06-15T09:06:55.000Z" itemprop="datePublished">Jun 15</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/15/%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86-%E5%A7%94%E6%89%98/">事件代理/委托</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/05/23/%E5%85%B3%E4%BA%8Ejavascript%E8%AF%AD%E6%B3%95%E7%89%B9%E6%80%A7%E7%9A%84%E5%8F%98%E6%80%81%E9%A2%98/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-05-23T13:18:50.000Z" itemprop="datePublished">May 23</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/23/%E5%85%B3%E4%BA%8Ejavascript%E8%AF%AD%E6%B3%95%E7%89%B9%E6%80%A7%E7%9A%84%E5%8F%98%E6%80%81%E9%A2%98/">关于javascript语法特性的变态题</a>
-    </h1>
-  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-src/" rel="tag">vue src</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/14/%E6%89%8B%E6%9C%BA%E7%AB%AF%E7%9A%84%E6%A1%86%E6%9E%B6%EF%BC%88%E8%87%AA%E9%80%82%E5%BA%94%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          移动端的自适应方法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/06/word-break%E5%92%8Cword-wrap%E5%8C%BA%E5%88%AB/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">word-break和word-wrap区别</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/05/14/%E4%BC%AA%E5%85%83%E7%B4%A0/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-05-14T12:43:29.000Z" itemprop="datePublished">May 14</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/14/%E4%BC%AA%E5%85%83%E7%B4%A0/">伪元素before，after，first-line,first-letter,selection</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/05/14/%E6%89%8B%E6%9C%BA%E7%AB%AF%E7%9A%84%E6%A1%86%E6%9E%B6%EF%BC%88%E8%87%AA%E9%80%82%E5%BA%94%EF%BC%89/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-05-14T12:43:29.000Z" itemprop="datePublished">May 14</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/14/%E6%89%8B%E6%9C%BA%E7%AB%AF%E7%9A%84%E6%A1%86%E6%9E%B6%EF%BC%88%E8%87%AA%E9%80%82%E5%BA%94%EF%BC%89/">移动端的自适应方法</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/05/10/Vue%E4%B8%ADimg%E7%9A%84src%E5%B1%9E%E6%80%A7%E7%BB%91%E5%AE%9A%E4%B8%8Estatic%E6%96%87%E4%BB%B6%E5%A4%B9/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-05-10T10:55:21.000Z" itemprop="datePublished">May 10</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/10/Vue%E4%B8%ADimg%E7%9A%84src%E5%B1%9E%E6%80%A7%E7%BB%91%E5%AE%9A%E4%B8%8Estatic%E6%96%87%E4%BB%B6%E5%A4%B9/">Vue中img的src属性</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/04/06/word-break%E5%92%8Cword-wrap%E5%8C%BA%E5%88%AB/" class="archive-article-date">
-  <time class="dt-published" datetime="2017-04-06T10:46:48.000Z" itemprop="datePublished">Apr 6</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/06/word-break%E5%92%8Cword-wrap%E5%8C%BA%E5%88%AB/">word-break和word-wrap区别</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-  </nav>
 
 </section>
         
